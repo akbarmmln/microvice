@@ -8,5 +8,8 @@ const logger = require('../../../config/logger');
 const welmod = require('../../../modeldb/welmodel');
 
 exports.well = async function (req, res) {
-    return res.json(rsmg('wellcome...'));
+    let data = await welmod.findAll({
+        raw: true
+    });
+    return res.json(rsmg(data));
 }; 

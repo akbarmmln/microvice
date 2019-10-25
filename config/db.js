@@ -44,6 +44,9 @@ const sequelize = new Sequelize(settings.dbname, settings.username, settings.pas
   operatorsAliases,
   host: settings.hostname,
   dialect: 'postgres',
+  "dialectOptions": {
+    "ssl": true
+  },
   pool: {
     max: 3000,
     min: 0,
