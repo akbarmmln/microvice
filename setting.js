@@ -9,13 +9,13 @@ module.exports = {
         port: process.env.MYSQL_PORT,
         dbname: process.env.MYSQL_DB_NAME,
     },
-    mq: {
-        protocol: 'amqp',
-        hostname: process.env.MQ_HOSTNAME,
-        port: process.env.MQ_PORT,
-        username: process.env.MQ_USERNAME,
-        password: process.env.MQ_PASSWORD,
-    },
+    // mq: {
+    //     protocol: 'amqp',
+    //     hostname: process.env.MQ_HOSTNAME,
+    //     port: process.env.MQ_PORT,
+    //     username: process.env.MQ_USERNAME,
+    //     password: process.env.MQ_PASSWORD,
+    // },
     // oss: {
     //     region: process.env.OSS_REGION,
     //     accessKeyId: process.env.OSS_KEY,

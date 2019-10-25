@@ -40,10 +40,10 @@ const operatorsAliases = {
   $col: Op.col
 };
 
-const sequelize = new Sequelize('d5gjlaspm19abo', 'qrvdwidncasrlz', '75c3c4ef2549b9db1a7f68a1ea3fd85c31b05ab3efb17c8423124a33ef31341a', {
+const sequelize = new Sequelize(settings.dbname, settings.username, settings.password, {
   operatorsAliases,
-  host: 'ec2-107-21-126-201.compute-1.amazonaws.com',
-  port: 5432,
+  host: settings.hostname,
+  port: settings.port,
   dialect: 'postgres',
   dialectOptions: {
     ssl: true
