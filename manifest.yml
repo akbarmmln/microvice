@@ -1,4 +1,0 @@
----
-applications:
- - name: micros-akses
-   memory: 256M
