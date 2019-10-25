@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const dbConnection = require('../config/db').Sequelize;
 
-const AdrProd = dbConnection.define('product', {
+const AdrProd = dbConnection.define('microvice', {
   id: {
     type: Sequelize.STRING,
     primaryKey: true
@@ -10,7 +10,7 @@ const AdrProd = dbConnection.define('product', {
 }, {
   freezeTableName: true,
   timestamps: false,
-  tableName: 'product'
+  tableName: 'microvice'
 });
 
 module.exports = AdrProd;
