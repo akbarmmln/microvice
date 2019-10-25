@@ -8,8 +8,17 @@ const logger = require('../../../config/logger');
 const welmod = require('../../../modeldb/welmodel');
 
 exports.well = async function (req, res) {
-    let data = await welmod.findAll({
-        raw: true
-    });
-    return res.json(rsmg(data));
+    try
+    {
+        let data = await welmod.findAll({
+            raw: true
+        });
+        logger.debug('sukses...');
+        return res.json(rsmg(data));
+    }
+    catch(e)
+    {
+        logger.error('error...', e);
+        return utils.returnErrorFunction(res, 'error to get data...', e);
+    }
 }; 

@@ -2,13 +2,11 @@ const Sequelize = require('sequelize');
 const dbConnection = require('../config/db').Sequelize;
 
 const AdrProd = dbConnection.define('product', {
-  product_id: {
-    type: Sequelize.INTEGER,
+  id: {
+    type: Sequelize.STRING,
     primaryKey: true
   },
-  id_person: Sequelize.STRING,
-  product_name: Sequelize.STRING,
-  product_price: Sequelize.INTEGER
+  type: Sequelize.STRING
 }, {
   freezeTableName: true,
   timestamps: false,
