@@ -3,5 +3,7 @@ const router = express.Router();
 const controller = require('./controller');
 const utils = require('../../../utils/utils');
 
-router.post('/well', controller.well);
+router.post('/show-pegawai', controller.showpegawai);
+router.post('/update-pegawai', controller.updatepegawai);
+
 module.exports = router;
