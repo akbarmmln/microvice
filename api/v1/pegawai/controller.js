@@ -24,6 +24,25 @@ exports.showpegawai = async function (req, res) {
     }
 };
 
+exports.deletepegawai = async function(req, res)
+{
+    try
+    {
+        let idpeg = req.body.idpeg;
+
+        await pegawaimod.destroy({
+            where: {pegawai_id: idpeg}
+        });
+
+        return res.json(rsmg());
+    }
+    catch(e)
+    {
+        logger.error('error...', e);
+        return utils.returnErrorFunction(res, 'error to get data...', e);
+    }  
+};
+
 exports.updatepegawai = async function(req, res)
 {
     try
