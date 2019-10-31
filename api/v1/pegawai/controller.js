@@ -24,6 +24,28 @@ exports.showpegawai = async function (req, res) {
     }
 };
 
+exports.addpegawai = async function(req, res)
+{
+    try
+    {
+        let namapeg = req.body.namapeg;
+        let gajipeg = req.body.gajipeg;
+
+        await pegawaimod.create({
+            pegawai_id: uuidv4(),
+            pegawai_nama: namapeg,
+            pegawai_gaji: gajipeg
+        });
+
+        return res.json(rsmg());
+    }
+    catch(e)
+    {
+        logger.error('error...', e);
+        return utils.returnErrorFunction(res, 'error to get data...', e);
+    }
+};
+
 exports.deletepegawai = async function(req, res)
 {
     try
