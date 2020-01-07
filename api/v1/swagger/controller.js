@@ -16,7 +16,21 @@ exports.trackingOrder = async function(req, res){
             }
           },
           "data":{ 
-            "rc1":[ 
+            "rc1":[
+               { 
+                  "noAplikasiPayung":"0000180321000169",
+                  "noAplikasi":"0000180321000454",
+                  "kodeCabang":"0321",
+                  "objectDesc":"MOTOR BEKAS",
+                  "objectType":"BEBEK",
+                  "objectBrand":"",
+                  "objectModel":"SATRIA F150 FIGHTER",
+                  "objectYear":"",
+                  "lastKnownState":"REJECT LEVEL 5",
+                  "tanggalStatus":"2019-10-02 17:39:23.0",
+                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
+                  "tanggalOrder":"2018-01-08 00:00:00.0"
+               },
                { 
                   "noAplikasiPayung":"0000180321000169",
                   "noAplikasi":"0000180321000454",
