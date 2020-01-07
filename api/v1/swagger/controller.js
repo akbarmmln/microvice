@@ -1,4 +1,6 @@
 'use strict';
+const moment = require('moment');
+const rp = require('request-promise');
 
 exports.trackingOrder = async function(req, res){
     res.json({ 
@@ -38,7 +40,7 @@ exports.trackingOrder = async function(req, res){
                   "objectBrand":"YAMAHA",
                   "objectModel":"JUPITER Z FI",
                   "objectYear":"2016",
-                  "lastKnownState":"INITIAL DATA ENTRY",
+                  "lastKnownState":"SURVEY RESULT ENTRY",
                   "tanggalStatus":"2019-10-02 17:39:23.0",
                   "tanggalAplikasi":"2018-01-08 00:00:00.0",
                   "tanggalOrder":"2018-01-08 00:00:00.0"
@@ -52,7 +54,7 @@ exports.trackingOrder = async function(req, res){
                   "objectBrand":"",
                   "objectModel":"SATRIA F150 FIGHTER",
                   "objectYear":"2016",
-                  "lastKnownState":"INITIAL DATA ENTRY",
+                  "lastKnownState":"CREDIT APPROVAL LEVEL 1",
                   "tanggalStatus":"2019-10-02 17:39:23.0",
                   "tanggalAplikasi":"2018-01-08 00:00:00.0",
                   "tanggalOrder":"2018-01-08 00:00:00.0"
@@ -66,8 +68,8 @@ exports.trackingOrder = async function(req, res){
                   "objectBrand":"HONDA",
                   "objectModel":"SUPRA GTR 150 SPORTY",
                   "objectYear":"2016",
-                  "lastKnownState":"",
-                  "tanggalStatus":"",
+                  "lastKnownState":"PO_CONFIRMED",
+                  "tanggalStatus":"2019-10-02 17:39:23.0",
                   "tanggalAplikasi":"2018-03-08 00:00:00.0",
                   "tanggalOrder":"2018-03-08 00:00:00.0"
                }
