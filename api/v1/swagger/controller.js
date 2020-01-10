@@ -17,49 +17,21 @@ exports.trackingOrder = async function(req, res){
           },
           "data":{ 
             "rc1":[
-               { 
+               {
                   "noAplikasiPayung":"0000180321000169",
-                  "noAplikasi":"0000180321000454",
+                  "noAplikasi":"0000180321000170",
                   "kodeCabang":"0321",
                   "objectDesc":"MOTOR BEKAS",
                   "objectType":"BEBEK",
-                  "objectBrand":"",
-                  "objectModel":"SATRIA F150 FIGHTER",
-                  "objectYear":"",
-                  "lastKnownState":"DV_CONFIRM",
-                  "tanggalStatus":"2019-10-02 17:39:23.0",
-                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
-                  "tanggalOrder":"2018-01-08 00:00:00.0"
-               },
-               { 
-                  "noAplikasiPayung":"0000180321000169",
-                  "noAplikasi":"0000180321000454",
-                  "kodeCabang":"0321",
-                  "objectDesc":"MOTOR BEKAS",
-                  "objectType":"BEBEK",
-                  "objectBrand":"",
-                  "objectModel":"SATRIA F150 FIGHTER",
-                  "objectYear":"",
-                  "lastKnownState":"REJECT LEVEL 5",
-                  "tanggalStatus":"2019-10-02 17:39:23.0",
-                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
-                  "tanggalOrder":"2018-01-08 00:00:00.0"
-               },
-               { 
-                  "noAplikasiPayung":"0000180321000169",
-                  "noAplikasi":"0000180321000454",
-                  "kodeCabang":"0321",
-                  "objectDesc":"MOTOR BARU",
-                  "objectType":"BEBEK",
-                  "objectBrand":"",
-                  "objectModel":"SATRIA F150 FIGHTER",
-                  "objectYear":"",
+                  "objectBrand":"YAMAHA",
+                  "objectModel":"JUPITER Z FI",
+                  "objectYear":"2016",
                   "lastKnownState":"INITIAL DATA ENTRY",
                   "tanggalStatus":"2019-10-02 17:39:23.0",
                   "tanggalAplikasi":"2018-01-08 00:00:00.0",
                   "tanggalOrder":"2018-01-08 00:00:00.0"
                },
-               { 
+               {
                   "noAplikasiPayung":"0000180321000169",
                   "noAplikasi":"0000180321000170",
                   "kodeCabang":"0321",
@@ -73,33 +45,75 @@ exports.trackingOrder = async function(req, res){
                   "tanggalAplikasi":"2018-01-08 00:00:00.0",
                   "tanggalOrder":"2018-01-08 00:00:00.0"
                },
-               { 
+               {
                   "noAplikasiPayung":"0000180321000169",
-                  "noAplikasi":"0000180321000179",
+                  "noAplikasi":"0000180321000170",
                   "kodeCabang":"0321",
-                  "objectDesc":"MOTOR BARU",
+                  "objectDesc":"MOTOR BEKAS",
                   "objectType":"BEBEK",
-                  "objectBrand":"",
-                  "objectModel":"SATRIA F150 FIGHTER",
+                  "objectBrand":"YAMAHA",
+                  "objectModel":"JUPITER Z FI",
                   "objectYear":"2016",
-                  "lastKnownState":"CREDIT APPROVAL LEVEL 1",
+                  "lastKnownState":"APPROVE LEVEL 8",
                   "tanggalStatus":"2019-10-02 17:39:23.0",
                   "tanggalAplikasi":"2018-01-08 00:00:00.0",
                   "tanggalOrder":"2018-01-08 00:00:00.0"
                },
-               { 
-                  "noAplikasiPayung":"0000180321003573",
-                  "noAplikasi":"0000180321003574",
+               {
+                  "noAplikasiPayung":"0000180321000169",
+                  "noAplikasi":"0000180321000170",
                   "kodeCabang":"0321",
-                  "objectDesc":"MOTOR BARU",
+                  "objectDesc":"MOTOR BEKAS",
                   "objectType":"BEBEK",
-                  "objectBrand":"HONDA",
-                  "objectModel":"SUPRA GTR 150 SPORTY",
+                  "objectBrand":"YAMAHA",
+                  "objectModel":"JUPITER Z FI",
                   "objectYear":"2016",
-                  "lastKnownState":"PO_CONFIRMED",
+                  "lastKnownState":"GENERATE_PO",
                   "tanggalStatus":"2019-10-02 17:39:23.0",
-                  "tanggalAplikasi":"2018-03-08 00:00:00.0",
-                  "tanggalOrder":"2018-03-08 00:00:00.0"
+                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
+                  "tanggalOrder":"2018-01-08 00:00:00.0"
+               },
+               {
+                  "noAplikasiPayung":"0000180321000169",
+                  "noAplikasi":"0000180321000170",
+                  "kodeCabang":"0321",
+                  "objectDesc":"MOTOR BEKAS",
+                  "objectType":"BEBEK",
+                  "objectBrand":"YAMAHA",
+                  "objectModel":"JUPITER Z FI",
+                  "objectYear":"2016",
+                  "lastKnownState":"DONE_READY_TO_PPD",
+                  "tanggalStatus":"2019-10-02 17:39:23.0",
+                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
+                  "tanggalOrder":"2018-01-08 00:00:00.0"
+               },
+               {
+                  "noAplikasiPayung":"0000180321000169",
+                  "noAplikasi":"0000180321000170",
+                  "kodeCabang":"0321",
+                  "objectDesc":"MOTOR BEKAS",
+                  "objectType":"BEBEK",
+                  "objectBrand":"YAMAHA",
+                  "objectModel":"JUPITER Z FI",
+                  "objectYear":"2016",
+                  "lastKnownState":"REJECT LEVEL 2",
+                  "tanggalStatus":"2019-10-02 17:39:23.0",
+                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
+                  "tanggalOrder":"2018-01-08 00:00:00.0"
+               },
+               {
+                  "noAplikasiPayung":"0000180321000169",
+                  "noAplikasi":"0000180321000170",
+                  "kodeCabang":"0321",
+                  "objectDesc":"MOTOR BEKAS",
+                  "objectType":"BEBEK",
+                  "objectBrand":"YAMAHA",
+                  "objectModel":"JUPITER Z FI",
+                  "objectYear":"2016",
+                  "lastKnownState":"123",
+                  "tanggalStatus":"2019-10-02 17:39:23.0",
+                  "tanggalAplikasi":"2018-01-08 00:00:00.0",
+                  "tanggalOrder":"2018-01-08 00:00:00.0"
                }
             ]
          }
