@@ -4,5 +4,6 @@ const controller = require('./controller');
 
 router.post('/trackingOrder', controller.trackingOrder);
 router.post('/contractList', controller.contractList);
+router.post('/regis-loyalty', controller.regisLoyalty);
 
 module.exports = router;
