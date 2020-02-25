@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const location = (name = '') => name ? `api/v1/${name}` : 'api/v1';
-const location2 = (name = '') => name ? `api/aol/v1/${name}` : 'api/aol/v1';
-const location3 = (name = '') => name ? `api/loyalty/v1/${name}` : 'api/loyalty/v1';
+const location2 = (name = '') => name ? `api/aol/${name}` : 'api/aol';
+const location3 = (name = '') => name ? `api/loyalty/${name}` : 'api/loyalty';
 const logger = require('./config/logger');
 
 /* SET CORS HEADERS FOR API */

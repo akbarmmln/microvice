@@ -2,6 +2,6 @@ const express = require('express');
 const router = express.Router();
 const controller = require('./controller');
 
-router.post('/', controller.inquiryOidByNikOrPhoneNumber);
+router.post('/registrationLoyalty', controller.registrationLoyalty);
 
 module.exports = router;
