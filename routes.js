@@ -4,6 +4,7 @@ const fs = require('fs');
 const location = (name = '') => name ? `api/v1/${name}` : 'api/v1';
 const location2 = (name = '') => name ? `api/aol/${name}` : 'api/aol';
 const location3 = (name = '') => name ? `api/loyalty/${name}` : 'api/loyalty';
+const location4 = (name = '') => name ? `api/ecs/${name}` : 'api/ecs';
 const logger = require('./config/logger');
 
 /* SET CORS HEADERS FOR API */
@@ -34,4 +35,10 @@ fs.readdirSync(location3())
         router.use(path, require(`.${path}`));
     });
 
+fs.readdirSync(location3())
+    .forEach(file => {
+        const path = `/${location4(file)}`;
+        logger.debug('asasas',path)
+        router.use(path, require(`.${path}`));
+    });
 module.exports = router;
