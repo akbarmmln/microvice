@@ -167,14 +167,14 @@ exports.trackingOrderStar = async function(req, res){
             "orderId": "1204675409",
             "orderDate": "2020-03-26T02:06:25Z",
             "applicationNo": null,
-            "applicationStatusCd": "DATA_COMPLETION_1",
+            "applicationStatusCd": "DATA_COMPLETION",
             "applicationStatusName": "Data Completion",
             "applicationStatusDesc": "Data Completion",
             "firstPayment": null,
             "vaPayment": null,
             "urlPayment": null,
             "statusPayment": null,
-            "currentStatus": "DATA_COMPLETION",
+            "currentStatus": "DATA_COMPLETION_1",
             "histories": [
               {
                 "applicationStatusCd": "DATA_COMPLETION",
