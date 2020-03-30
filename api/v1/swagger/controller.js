@@ -174,7 +174,7 @@ exports.trackingOrderStar = async function(req, res){
             "vaPayment": null,
             "urlPayment": null,
             "statusPayment": null,
-            "currentStatus": "DATA_COMPLETION_1",
+            "currentStatus": "DATA_COMPLETION",
             "histories": [
               {
                 "applicationStatusCd": "DATA_COMPLETION",
