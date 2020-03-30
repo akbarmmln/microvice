@@ -167,211 +167,18 @@ exports.trackingOrderStar = async function(req, res){
             "orderId": "1204675409",
             "orderDate": "2020-03-26T02:06:25Z",
             "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
+            "applicationStatusCd": "DATA_COMPLETION",
+            "applicationStatusName": "Data Completion",
+            "applicationStatusDesc": "Data Completion",
             "firstPayment": null,
             "vaPayment": null,
             "urlPayment": null,
             "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
+            "currentStatus": "DATA_COMPLETION",
             "histories": [
               {
                 "applicationStatusCd": "DATA_COMPLETION",
                 "createdDate": "2020-03-26T02:35:44.950Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-26T02:44:37.265Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-26T02:45:11.932Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "5",
-            "merchantName": "Electronic City",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "Led Standard",
-            "qty": "1",
-            "total": 1899000.0,
-            "tMinusDP": 1899000.0,
-            "installment": 348000.0,
-            "orderId": "1204575409",
-            "orderDate": "2020-03-23T12:09:27Z",
-            "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
-            "firstPayment": null,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-23T11:47:46.215Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-23T11:53:56.217Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-23T11:54:31.662Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "6",
-            "merchantName": "Hartono",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "Single Split",
-            "qty": "1",
-            "total": 3539000.0,
-            "tMinusDP": 3539000.0,
-            "installment": 455000.0,
-            "orderId": "22172",
-            "orderDate": "2020-03-20T07:57:48Z",
-            "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
-            "firstPayment": null,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-20T08:00:22.282Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-20T08:02:54.162Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "6",
-            "merchantName": "Hartono",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "Standing Dispenser",
-            "qty": "1",
-            "total": 3059000.0,
-            "tMinusDP": 3059000.0,
-            "installment": 585000.0,
-            "orderId": "21962",
-            "orderDate": "2020-03-19T04:05:03Z",
-            "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
-            "firstPayment": null,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-19T04:06:53.692Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-19T04:08:21.950Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-19T04:08:57.926Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "6",
-            "merchantName": "Hartono",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "LED TV",
-            "qty": "1",
-            "total": 4559000.0,
-            "tMinusDP": 4559000.0,
-            "installment": 576000.0,
-            "orderId": "21458",
-            "orderDate": "2020-03-16T04:54:15Z",
-            "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
-            "firstPayment": null,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-16T05:27:59.546Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-16T05:29:33.705Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-16T05:30:01.161Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "6",
-            "merchantName": "Hartono",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "Standing Dispenser",
-            "qty": "1",
-            "total": 3059000.0,
-            "tMinusDP": 3059000.0,
-            "installment": 398000.0,
-            "orderId": "21073",
-            "orderDate": "2020-03-13T02:52:40Z",
-            "applicationNo": "0000200113000044",
-            "applicationStatusCd": "DOC_SIGN",
-            "applicationStatusName": "Doc Sign",
-            "applicationStatusDesc": "Doc Sign",
-            "firstPayment": 398000.0,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DOC_SIGN",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-13T02:54:08.200Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-13T02:55:24.914Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-13T02:55:48.273Z"
-              },
-              {
-                "applicationStatusCd": "DOC_SIGN",
-                "createdDate": "2020-03-13T03:00:40.329Z"
               }
             ]
           },
@@ -406,10 +213,6 @@ exports.trackingOrderStar = async function(req, res){
                 "applicationStatusCd": "DATA_VALIDATION",
                 "createdDate": "2020-03-12T12:51:07.251Z"
               },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T12:57:10.779Z"
-              }
             ]
           },
           {
@@ -423,83 +226,9 @@ exports.trackingOrderStar = async function(req, res){
             "total": 3059000.0,
             "tMinusDP": 3059000.0,
             "installment": 398000.0,
-            "orderId": "21016",
-            "orderDate": "2020-03-12T11:46:31Z",
-            "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
-            "firstPayment": null,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-12T11:47:32.349Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T11:49:08.108Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T11:49:50.975Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "6",
-            "merchantName": "Hartono",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "Standing Dispenser",
-            "qty": "1",
-            "total": 3059000.0,
-            "tMinusDP": 3059000.0,
-            "installment": 585000.0,
-            "orderId": "21013",
-            "orderDate": "2020-03-12T11:22:21Z",
-            "applicationNo": null,
-            "applicationStatusCd": "DATA_VALIDATION",
-            "applicationStatusName": "Data Validation",
-            "applicationStatusDesc": "Data Validation",
-            "firstPayment": null,
-            "vaPayment": null,
-            "urlPayment": null,
-            "statusPayment": null,
-            "currentStatus": "DATA_VALIDATION",
-            "histories": [
-              {
-                "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-12T11:23:32.274Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T11:25:41.208Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T11:26:17.956Z"
-              }
-            ]
-          },
-          {
-            "merchantId": "6",
-            "merchantName": "Hartono",
-            "merchantLogo": null,
-            "merchantTimeout": 120,
-            "merchantIsTimeout": true,
-            "productName": "Standing Dispenser",
-            "qty": "1",
-            "total": 3059000.0,
-            "tMinusDP": 3059000.0,
-            "installment": 398000.0,
-            "orderId": "20994",
-            "orderDate": "2020-03-12T09:56:24Z",
-            "applicationNo": "0000200113000043",
+            "orderId": "21073",
+            "orderDate": "2020-03-13T02:52:40Z",
+            "applicationNo": "0000200113000044",
             "applicationStatusCd": "DOC_SIGN",
             "applicationStatusName": "Doc Sign",
             "applicationStatusDesc": "Doc Sign",
@@ -511,19 +240,56 @@ exports.trackingOrderStar = async function(req, res){
             "histories": [
               {
                 "applicationStatusCd": "DATA_COMPLETION",
-                "createdDate": "2020-03-12T09:58:09.489Z"
+                "createdDate": "2020-03-13T02:54:08.200Z"
               },
               {
                 "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T10:01:01.121Z"
-              },
-              {
-                "applicationStatusCd": "DATA_VALIDATION",
-                "createdDate": "2020-03-12T10:10:48.686Z"
+                "createdDate": "2020-03-13T02:55:24.914Z"
               },
               {
                 "applicationStatusCd": "DOC_SIGN",
-                "createdDate": "2020-03-12T10:13:39.597Z"
+                "createdDate": "2020-03-13T03:00:40.329Z"
+              }
+            ]
+          },
+          {
+            "merchantId": "6",
+            "merchantName": "Hartono",
+            "merchantLogo": null,
+            "merchantTimeout": 120,
+            "merchantIsTimeout": true,
+            "productName": "Standing Dispenser",
+            "qty": "1",
+            "total": 3059000.0,
+            "tMinusDP": 3059000.0,
+            "installment": 398000.0,
+            "orderId": "20954",
+            "orderDate": "2020-03-12T05:58:43Z",
+            "applicationNo": "0000200113000041",
+            "applicationStatusCd": "COMPLETED",
+            "applicationStatusName": "Completed",
+            "applicationStatusDesc": "Completed",
+            "firstPayment": 398000.0,
+            "vaPayment": null,
+            "urlPayment": null,
+            "statusPayment": null,
+            "currentStatus": "COMPLETED",
+            "histories": [
+              {
+                "applicationStatusCd": "DATA_COMPLETION",
+                "createdDate": "2020-03-12T05:59:39.862Z"
+              },
+              {
+                "applicationStatusCd": "DATA_VALIDATION",
+                "createdDate": "2020-03-12T06:01:51.884Z"
+              },
+              {
+                "applicationStatusCd": "DOC_SIGN",
+                "createdDate": "2020-03-12T06:06:33.057Z"
+              },
+              {
+                "applicationStatusCd": "COMPLETED",
+                "createdDate": "2020-03-12T06:06:50.527Z"
               }
             ]
           }
