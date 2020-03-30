@@ -268,7 +268,7 @@ exports.trackingOrder = async function(req, res){
                "objectBrand":"YAMAHA",
                "objectModel":"JUPITER Z F7",
                "objectYear":"2016",
-               "lastKnownState":"DONE READY TO PPD ",
+               "lastKnownState":"DONE READY TO PPD",
                "tanggalStatus":"2019-10-02 17:39:23.0",
                "tanggalAplikasi":"2018-01-08 00:00:00.0",
                "tanggalOrder":"2018-01-08 00:00:00.0"
