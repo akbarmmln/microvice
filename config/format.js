@@ -22,3 +22,35 @@ exports.rupiahFormat = async function(rupiah, elit){
         throw e;
     }
 }
+
+exports.isValidateDate = async function(date)
+{
+    try{
+        date = new Date(date);
+        return date instanceof Date && !isNaN(date);
+    }catch(e){
+        logger.error(e);
+        return false;
+    }
+}
+
+exports.isEmpty = async function (data) {
+    if(typeof(data) === 'object'){
+        if(JSON.stringify(data) === '{}' || JSON.stringify(data) === '[]'){
+            return true;
+        }else if(!data){
+            return true;
+        }
+        return false;
+    }else if(typeof(data) === 'string'){
+        if(!data.trim()){
+            return true;
+        }
+        return false;
+    }else if(typeof(data) === 'undefined'){
+        return true;
+    }else{
+        return false;
+    }
+}
+  

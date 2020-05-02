@@ -46,16 +46,16 @@ const sequelize = new Sequelize(settings.dbname, settings.username, settings.pas
   port: settings.port,
   dialect: 'postgres',
   dialectOptions: {
-    ssl: true
+    ssl: true,
+    decimalNumbers: true
   },
   pool: {
-    max: 3000,
+    max: 5,
     min: 0,
     acquire: 30000,
-    idle: 30000,
-    idleTimeoutMillis: 3000,
-    evict: 30000
-  }
+    idle: 10000
+  },
+  timezone: '+07:00'
 });
 
 sequelize.authenticate()
