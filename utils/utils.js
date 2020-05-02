@@ -1,5 +1,6 @@
 const logger = require('../config/logger');
 const errMsg = require('../error/resError');
+const nodemailer = require('nodemailer');
 
 exports.returnErrorFunction = function (resObject, errorMessageLogger, errorObject) {
   if (typeof errorObject === 'string') {
@@ -17,12 +18,13 @@ exports.returnErrorFunction = function (resObject, errorMessageLogger, errorObje
 exports.sendGridMailer = async function (from, to, subject, body, attachments, bodyType = 'html') {
   try {
     let transporter = nodemailer.createTransport({
-      host: process.env.SENDGRID_SMTP_HOST,
-      port: process.env.SENDGRID_PORT,
-      secure: false,
+      // host: process.env.SENDGRID_SMTP_HOST,
+      // port: process.env.SENDGRID_PORT,
+      // secure: false,
+      service: 'gmail',
       auth: {
-        user: process.env.SENDGRID_USERNAME,
-        pass: process.env.SENDGRID_PASSWORD
+        user: 'akbarmmln@gmail.com',
+        pass: 'akbarakbar'
       }
     });
     let sendProps = {

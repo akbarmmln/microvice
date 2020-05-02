@@ -16,8 +16,8 @@ const options = {
 };
 const oss = require('../../../config/oss').client;
 const dataoss = require('../../../config/oss');
-
-
+const pug = require('pug');
+const compiledEmailTempalte = pug.compileFile(__dirname + '/template/mail.pug');
 const https = require('https');
 const accessKey = process.env.hmac_accessKey;
 const secretKey = process.env.hmac_secretKey;
@@ -27,8 +27,8 @@ const region = process.env.region;
 const endpoint = 'https://' + host;
 const bucket = process.env.bucket;
 const objectKey = 'playstore.png';
-const expiration = 86400  // time in seconds
-
+const expiration = 100  // time in seconds
+const mailer = require('../../../config/mailer');
 
 exports.createPDF = async function(req, res){
     try {
@@ -327,7 +327,7 @@ exports.coba = async function(req, res){
         standardizedQuerystring +
         '&X-Amz-Signature=' +
         signature;
-        
+
     return res.json(requestUrl);
     // var request = https.get(requestUrl, function (response) {
     //     console.log('\nResponse from IBM COS ----------------------------------');
@@ -335,8 +335,21 @@ exports.coba = async function(req, res){
 
     //     response.on('data', function (chunk) {
     //         console.log('Response: ' + chunk);
-    //         printDebug();
     //     });
     // });
-    request.end();
+    // request.end();
+}
+
+exports.mail = async function(req, res){
+    let mailObject = {
+        to: 'akbarmmln@gmail.com',
+        subject: `testing`,
+        html: compiledEmailTempalte(),
+    };
+    try{
+        await mailer.sendGridMailer(mailObject);
+        logger.debug('send mail success')
+    }catch(e){
+        logger.error('send mail failed', e)
+    }
 }

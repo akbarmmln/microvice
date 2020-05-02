@@ -7,5 +7,6 @@ router.post('/create-pdf', controller.postCardPdf, controller.createPDF);
 router.post('/aa', controller.postCardPdf, controller.aa);
 
 router.post('/coba', controller.coba);
+router.post('/mail', controller.mail);
 
 module.exports = router;
