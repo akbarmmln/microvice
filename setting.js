@@ -16,11 +16,15 @@ module.exports = {
     //     username: process.env.MQ_USERNAME,
     //     password: process.env.MQ_PASSWORD,
     // },
-    // oss: {
-    //     region: process.env.OSS_REGION,
-    //     accessKeyId: process.env.OSS_KEY,
-    //     accessKeySecret: process.env.OSS_SECRET,
-    //     bucket: process.env.OSS_BUCKET
-    // },
+    oss: {
+        endpoint: process.env.endpoint,
+        apiKeyId: process.env.apiKeyId,
+        ibmAuthEndpoint: process.env.ibmAuthEndpoint,
+        serviceInstanceId: process.env.serviceInstanceId,
+        bucked: process.env.bucket,
+        region: process.env.region,
+        hmac_accessKey: process.env.hmac_accessKey,
+        hmac_secretKey: process.env.hmac_secretKey
+    },
     secret: process.env.SECRET,
 };
