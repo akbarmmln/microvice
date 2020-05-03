@@ -349,7 +349,9 @@ exports.mail = async function(req, res){
     try{
         await mailer.sendGridMailer(mailObject);
         logger.debug('send mail success')
+        return res.json(rsmg());
     }catch(e){
         logger.error('send mail failed', e)
+        return res.json(errmsg('10000', e))
     }
 }

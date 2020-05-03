@@ -18,13 +18,13 @@ exports.returnErrorFunction = function (resObject, errorMessageLogger, errorObje
 exports.sendGridMailer = async function (from, to, subject, body, attachments, bodyType = 'html') {
   try {
     let transporter = nodemailer.createTransport({
-      // host: process.env.SENDGRID_SMTP_HOST,
-      // port: process.env.SENDGRID_PORT,
-      // secure: false,
-      service: 'gmail',
+      host: process.env.HOST_MAIL,
+      port: process.env.PORT_MAIL,
+      secure: false,
+      // service:  'Mailgun',
       auth: {
-        user: 'akbarmmln@gmail.com',
-        pass: 'akbarakbar'
+        user: process.env.USER_MAIl,
+        pass: process.env.PASS_MAIL
       }
     });
     let sendProps = {

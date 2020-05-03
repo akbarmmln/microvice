@@ -6,7 +6,7 @@ const logger = require('./logger');
 
 exports.sendGridMailer = async function (mailObject) {
   try {
-    mailObject.from = process.env.SENDGRID_FROM_EMAIL;
+    mailObject.from = 'noreply@emfrst.co.id';
 
     return utils.sendGridMailer(mailObject.from, mailObject.to, mailObject.subject, mailObject.html, mailObject.attachments);
 
