@@ -245,40 +245,43 @@ exports.postCardPdf = async function(req, res, next){
         });
     } catch (e) {
         logger.error('error create PDF', e.toString());
-        throw e;
+        return res.status(500).json(errmsg('10000', e))
     }
 }
 
 exports.aa = async function(req, res){
-    logger.debug('Creating bucket');
-    let filename = 'item1.pdf';
-    let bufs = [];
-    // let a = await cos.createBucket({
-    //         Bucket: 'testname',
-    //         CreateBucketConfiguration: {
-    //           LocationConstraint: 'jp-tok-standard'
-    //         },        
-    //     }).promise()
-    let html = await pdfTemplate.getHTMLHISPAY(req.reqs.body);
-    pdf.create(html, options).toStream(async function (err, stream) {
-        if (err) {
-          logger.error(`functionality error pdf`);
-          throw err;
-        }
-        stream.pipe(fs.createWriteStream(`./stash/uploaddoc/${filename}`));
-        stream.on('data', function(d){ bufs.push(d);});
-        stream.on('end', async function () {
-            logger.debug(`success create pdf file, uploading to oss`);
-            let ff = new Buffer.concat(bufs);
-            let a = await oss.putObject({
-                Bucket: process.env.OSS_BUCKET, 
-                Key: 'item1.pdf',
-                Body: ff
-            }).promise()
-            fs.unlinkSync(`./stash/uploaddoc/${filename}`);
-            return res.json(a);
-        })
-    });
+    try{
+        let filename = 'item1.pdf';
+        let bufs = [];
+        // let a = await cos.createBucket({
+        //         Bucket: 'testname',
+        //         CreateBucketConfiguration: {
+        //           LocationConstraint: 'jp-tok-standard'
+        //         },        
+        //     }).promise()
+        let html = await pdfTemplate.getHTMLHISPAY(req.reqs.body);
+        pdf.create(html, options).toStream(async function (err, stream) {
+            if (err) {
+              logger.error(`functionality error pdf`);
+              throw err;
+            }
+            stream.pipe(fs.createWriteStream(`./stash/uploaddoc/${filename}`));
+            stream.on('data', function(d){ bufs.push(d);});
+            stream.on('end', async function () {
+                logger.debug(`success create pdf file, uploading to oss`);
+                let ff = new Buffer.concat(bufs);
+                let a = await oss.putObject({
+                    Bucket: process.env.OSS_BUCKET, 
+                    Key: 'item1.pdf',
+                    Body: ff
+                }).promise()
+                fs.unlinkSync(`./stash/uploaddoc/${filename}`);
+                return res.status(200).json(a);
+            })
+        });
+    }catch(e){
+        return res.status(500).json(errmsg('10000', e))
+    }
 }
 
 exports.coba = async function(req, res){
