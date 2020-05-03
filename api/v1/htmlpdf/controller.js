@@ -19,13 +19,13 @@ const dataoss = require('../../../config/oss');
 const pug = require('pug');
 const compiledEmailTempalte = pug.compileFile(__dirname + '/template/mail.pug');
 const https = require('https');
-const accessKey = process.env.hmac_accessKey;
-const secretKey = process.env.hmac_secretKey;
+const accessKey = process.env.OSS_HMAC_ACCE_KEY;
+const secretKey = process.env.OSS_HMAC_SEC_KEY;
 const httpMethod = 'GET';
-const host = process.env.endpoint;
-const region = process.env.region;
+const host = process.env.OSS_ENDPOINT;
+const region = process.env.OSS_REGION;
 const endpoint = 'https://' + host;
-const bucket = process.env.bucket;
+const bucket = process.env.OSS_BUCKET;
 const objectKey = 'playstore.png';
 const expiration = 100  // time in seconds
 const mailer = require('../../../config/mailer');
@@ -271,7 +271,7 @@ exports.aa = async function(req, res){
             logger.debug(`success create pdf file, uploading to oss`);
             let ff = new Buffer.concat(bufs);
             let a = await oss.putObject({
-                Bucket: process.env.bucket, 
+                Bucket: process.env.OSS_BUCKET, 
                 Key: 'item1.pdf',
                 Body: ff
             }).promise()

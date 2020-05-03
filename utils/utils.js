@@ -21,7 +21,7 @@ exports.sendGridMailer = async function (from, to, subject, body, attachments, b
       host: process.env.HOST_MAIL,
       port: process.env.PORT_MAIL,
       secure: false,
-      // service:  'Mailgun',
+      // service:  'gmail',
       auth: {
         user: process.env.USER_MAIl,
         pass: process.env.PASS_MAIL
