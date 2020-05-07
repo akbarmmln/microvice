@@ -1,12 +1,14 @@
 'use strict';
 
 const rsmg = require('../../../response/rs');
+const errMsg = require('../../../error/resError');
 const utils = require('../../../utils/utils');
 const moment = require('moment');
 const uuidv4 = require('uuid/v4');
 const logger = require('../../../config/logger');
 const pegawaimod = require('../../../modeldb/pegawaiModel');
 const transac = require('../../../config/db').Sequelize;
+const rp = require('promise-request-retry');
 
 exports.showpegawai = async function (req, res) {
     try
@@ -88,3 +90,47 @@ exports.updatepegawai = async function(req, res)
         return utils.returnErrorFunction(res, 'error to get data...', e);
     }
 };
+
+exports.findpegawai = async function(req, res){
+    try{
+        let nik = req.body.nik;
+        let data = await pegawaimod.findOne({
+            raw: true,
+            where: {nik: nik}
+        });
+        if(!data){
+            throw '10001';
+        }
+        logger.debug('sukses...');
+        return res.json(rsmg(data));
+    }catch(e){
+        if (typeof e === 'string') {
+            logger.error('error request data', e.toString());
+            return res.status(400).json(errMsg(e));
+        } else {
+            logger.error('internal server error', e.toString());
+            return res.status(500).json(errMsg('10000', e));
+        }
+    }
+}
+
+exports.cobaRetry = async function(req, res){
+    try{
+        let a = await rp({
+            method: 'POST',
+            uri: "http://localhost:8099/api/v1/pegawai/find-pegawai",
+            body: {nik: req.body.nik},
+            json: true,
+            retry : 2
+        });
+        return res.json(rsmg(a));
+    }catch(e){
+        if (typeof e === 'string') {
+            logger.error('error request data', e.toString());
+            return res.status(400).json(errMsg(e));
+        } else {
+            logger.error('internal server error', e.toString());
+            return res.status(500).json(errMsg('10000', e));
+        }
+    }
+}

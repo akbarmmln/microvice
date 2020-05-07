@@ -7,7 +7,8 @@ const AdrPegawai = dbConnection.define('pegawai', {
     primaryKey: true
   },
   pegawai_nama: Sequelize.STRING,
-  pegawai_gaji: Sequelize.STRING
+  pegawai_gaji: Sequelize.STRING,
+  nik: Sequelize.STRING
 }, {
   freezeTableName: true,
   timestamps: false,
