@@ -7,8 +7,15 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
-RUN apk add --no-cache  chromium --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main
-
+RUN set -x \
+    && apk update \
+    && apk upgrade \
+    && apk add --no-cache \
+    udev \
+    ttf-freefont \
+    chromium \
+    && npm install puppeteer@1.10.0
+    
 # Add phantomjs
 RUN wget -qO- "https://github.com/dustinblackman/phantomized/releases/download/2.1.1a/dockerized-phantomjs.tar.gz" | tar xz -C / \
     && npm config set user 0 \
