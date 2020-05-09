@@ -9,6 +9,4 @@ router.post('/upload-oss', controller.postCardPdf, controller.uploadOSS);
 router.post('/show-url', controller.showURL);
 router.post('/mail', controller.mail);
 
-router.post('/coba', controller.coba);
-
 module.exports = router;
