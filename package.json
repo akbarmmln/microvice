@@ -46,6 +46,7 @@
     "node-schedule": "^1.3.2",
     "nodemailer": "^6.4.6",
     "passport": "^0.4.0",
+    "pdf-from": "^0.2.2",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.3",
     "promise-request-retry": "^1.0.2",

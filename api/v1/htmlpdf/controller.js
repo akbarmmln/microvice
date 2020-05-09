@@ -29,6 +29,7 @@ const bucket = process.env.OSS_BUCKET;
 const objectKey = 'playstore.png';
 const expiration = 100  // time in seconds
 const mailer = require('../../../config/mailer');
+const pdfFrom = require('pdf-from');
 
 exports.createPDF = async function(req, res){
     try {
@@ -249,7 +250,7 @@ exports.postCardPdf = async function(req, res, next){
     }
 }
 
-exports.aa = async function(req, res){
+exports.uploadOSS = async function(req, res){
     try{
         let filename = 'item1.pdf';
         let bufs = [];
@@ -284,7 +285,7 @@ exports.aa = async function(req, res){
     }
 }
 
-exports.coba = async function(req, res){
+exports.showURL = async function(req, res){
     // assemble the standardized request
     var time = moment().utc();
     var timestamp = time.format('YYYYMMDDTHHmmss') + 'Z';
@@ -356,5 +357,63 @@ exports.mail = async function(req, res){
     }catch(e){
         logger.error('send mail failed', e)
         return res.json(errmsg('10000', e))
+    }
+}
+
+exports.coba = async function(req, res){
+    try{
+        let paramHTML = {
+            noform: '0',
+            nama: '0',
+            alamat: '0',
+            nik: '0',
+            cabang: '0',
+            no_perjanjian_pembiayaan: '0',
+            tgl_perjanjian_pembiayaan: '0',
+            objek_pembiayaan: '0',
+            merek_or_model: '0',
+            nopolisi: '0',
+            norangka: '0',
+            nomesin: '0',
+            ast_angsuran_perbulan: '0',
+            ast_tgl_jatuh_tempo_angsuran_terakhir: '0',
+            ast_angsuran_tertunggak: '0',
+            ast_nilai_preterm: '0',
+            ast_total_denda_belum_terbayar: '0',
+            asb_sebagian_angsuran_dimuka: '0',
+            asb_biaya_asuransi: '0',
+            asb_total_pokok_pembiayaan_baru: '0',
+            asb_angsuran_jatuh_tempo_setiap_tanggal: '0',
+            asb_tgl_jatuh_tempo_angsuran_berikutnya: '0',
+            asb_tgl_jatuh_tempo_angsuran_terakhir: '0',
+            asb_angsuran_perbulan: '0',
+            asb_periode_mulai_asuransi: '0',
+            asb_periode_berakhir_asuransi: '0',
+            asb_sisa_denda: '0'
+        }
+        let htmlString = await pdfTemplate.getHTMLDOC(paramHTML);
+        let a = await pdfFrom.html(htmlString, {
+          displayHeaderFooter: false,
+          format: "Letter",
+          height: "16.59in",
+          width: "10.89in",
+          landscape: false,
+          margin: {
+            top: '20px',
+            right: '20px',
+            bottom: '20px',
+            left: '20px'
+          },
+          scale: 1.25
+        });
+        return res.json(a.toString('base64'));
+    }catch(e){
+        if (typeof e === 'string') {
+            logger.error('error request data', e.toString());
+            return res.status(400).json(errMsg(e));
+        } else {
+            logger.error('internal server error', e.toString());
+            return res.status(500).json(errMsg('10000', e));
+        }
     }
 }

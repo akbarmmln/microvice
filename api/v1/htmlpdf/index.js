@@ -4,9 +4,11 @@ const controller = require('./controller');
 const utils = require('../../../utils/utils');
 
 router.post('/create-pdf', controller.postCardPdf, controller.createPDF);
-router.post('/aa', controller.postCardPdf, controller.aa);
+router.post('/upload-oss', controller.postCardPdf, controller.uploadOSS);
+
+router.post('/show-url', controller.showURL);
+router.post('/mail', controller.mail);
 
 router.post('/coba', controller.coba);
-router.post('/mail', controller.mail);
 
 module.exports = router;
