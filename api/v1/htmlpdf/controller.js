@@ -410,10 +410,10 @@ exports.coba = async function(req, res){
     }catch(e){
         if (typeof e === 'string') {
             logger.error('error request data', e.toString());
-            return res.status(400).json(errMsg(e));
+            return res.status(400).json(errmsg(e));
         } else {
             logger.error('internal server error', e.toString());
-            return res.status(500).json(errMsg('10000', e));
+            return res.status(500).json(errmsg('10000', e));
         }
     }
 }
