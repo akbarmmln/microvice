@@ -400,9 +400,9 @@ exports.newCreatePDF = async function(req, res){
         const page = await browser.newPage();
         await page.setContent(htmlString)
         const pdf = await page.pdf({
-            format: "A4",
-            // width: '8.27in',
-            // height: '11.8in',
+            // format: "A4",
+            width: '8.27in',
+            height: '11.8in',
             printBackground: false,
             margin: {
                 top: '10px',
