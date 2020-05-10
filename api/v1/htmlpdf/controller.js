@@ -402,7 +402,7 @@ exports.newCreatePDF = async function(req, res){
         const pdf = await page.pdf({
             // format: "A4",
             width: '8.27in',
-            height: '12in',
+            height: '15in',
             printBackground: false,
             margin: {
                 top: '10px',
