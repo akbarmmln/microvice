@@ -395,7 +395,7 @@ exports.newCreatePDF = async function(req, res){
         let browser = await puppeteer.launch({
             executablePath:'/usr/bin/chromium-browser', 
             headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage', 'chromium-browser', 'google-chrome']
+            args: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage', 'chromium-browser', 'google-chrome']
         });
         const page = await browser.newPage();
         await page.setContent(htmlString)
