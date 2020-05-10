@@ -393,7 +393,7 @@ exports.newCreatePDF = async function(req, res){
         }
         let htmlString = await pdfTemplate.getHTMLDOC(paramHTML);
         let browser = await puppeteer.launch({
-            executablePath:'/usr/bin/chromium-browser', 
+            // executablePath:'/usr/bin/chromium-browser', 
             headless: true,
             args: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage', 'chromium-browser', 'google-chrome']
         });
