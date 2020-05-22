@@ -10,6 +10,6 @@ router.post('/delete-pegawai', controller.deletepegawai);
 router.post('/add-pegawai', controller.addpegawai);
 
 router.post('/coba-retry', controller.cobaRetry);
-
+router.post('/coba', controller.coba);
 
 module.exports = router;

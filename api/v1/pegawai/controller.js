@@ -9,6 +9,7 @@ const logger = require('../../../config/logger');
 const pegawaimod = require('../../../modeldb/pegawaiModel');
 const transac = require('../../../config/db').Sequelize;
 const rp = require('promise-request-retry');
+const openQuery = require('../../../config/db').Sequelize;
 
 exports.showpegawai = async function (req, res) {
     try
@@ -132,5 +133,15 @@ exports.cobaRetry = async function(req, res){
             logger.error('internal server error', e.toString());
             return res.status(500).json(errMsg('10000', e));
         }
+    }
+}
+
+exports.coba = async function(req, res){
+    try{
+        let data = await openQuery.query("SELECT * FROM pegawai",{ type: openQuery.QueryTypes.SELECT },{raw: true});
+        return res.status(200).json(data);
+    }catch(e){
+        logger.error('internal server error...', JSON.stringify(e));
+        return res.status(500).json(e);
     }
 }
