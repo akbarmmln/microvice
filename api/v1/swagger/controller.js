@@ -386,7 +386,7 @@ exports.trackingOrderAction = async function(req, res){
                "objectBrand":"SUZUKI",
                "objectModel":"ERTIGA GL M/T",
                "objectYear":"2018",
-               "lastKnownState":"GENERATE_PO",
+               "lastKnownState":"DONE READY TO PPD ",
                "tanggalStatus":"2019-10-02 17:39:23.0",
                "tanggalAplikasi":"2018-01-08 00:00:00.0",
                "tanggalOrder":"2018-01-08 00:00:00.0"
