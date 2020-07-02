@@ -400,7 +400,7 @@ exports.trackingOrderAction = async function(req, res){
                "objectBrand":"HONDA",
                "objectModel":"NEWVARIOTECHNOCBS FI",
                "objectYear":"2018",
-               "lastKnownState":"APPROVE_DOC_VER LEVEL 10",
+               "lastKnownState":"READY TO PPD ",
                "tanggalStatus":"2019-10-02 17:39:23.0",
                "tanggalAplikasi":"2018-01-08 00:00:00.0",
                "tanggalOrder":"2018-01-08 00:00:00.0"
