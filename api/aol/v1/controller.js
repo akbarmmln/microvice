@@ -49,8 +49,8 @@ exports.validationInput = async function(req, res){
     "data": {
       "contractNo": "123456",
       "dob": "11021980",
-      "phoneNo": "081112312345",
-  	  "email": "test@adira.co.id",
+      "phoneNo": "08111788999",
+  	  "email": "nadya.laura@adira.co.id",
     }
   })
 }
