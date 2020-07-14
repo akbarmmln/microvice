@@ -31,3 +31,26 @@ exports.registrationLoyalty = async function(req, res){
     }
   });
 }
+
+exports.validationInput = async function(req, res){
+  res.json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Permintaan berhasil diproses",
+      "srcCode": "1",
+      "srcMessage": "SUCCESS",
+      "addInfo": {
+        "requestId": "“ECM-01",
+        "requestTimestamp": "2019-04-02 18:13:22",
+        "refNo": "20200324094913047089541108997093",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "contractNo": "123456",
+      "dob": "11021980",
+      "phoneNo": "081112312345",
+  	  "email": "test@adira.co.id",
+    }
+  })
+}
