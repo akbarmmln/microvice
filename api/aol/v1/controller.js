@@ -72,64 +72,73 @@ exports.listDocEcm = async function(req, res){
     },
     "data": {
       "result": "SUCCESS",
-      "data": {
-        "notags": [
-          {
-            "doc_id": "ecm-01",
-            "documents_name": "Perjanjian Pembiayaan",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-02",
-            "documents_name": "Ringkasan Informasi Produk & Layanan",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-03",
-            "documents_name": "Surat Kesepakatan Konsumen",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-04",
-            "documents_name": "Salinan BPKB",
-            "status_doc": "1"
-          }
-        ],
-        "Polis Asuransi": [
-          {
-            "doc_id": "ecm-05",
-            "documents_name": "Polis Asuransi Unit",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-06",
-            "documents_name": "Polis Asuransi PA",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-07",
-            "documents_name": "Polis Asuransi Jiwa",
-            "status_doc": "1"
-          }
-        ],
-        "Ikhtisar Asuransi": [
-          {
-            "doc_id": "ecm-08",
-            "documents_name": "Ikhtisar Asuransi Unit",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-09",
-            "documents_name": "Ikhtisar Asuransi PA",
-            "status_doc": "1"
-          },
-          {
-            "doc_id": "ecm-10",
-            "documents_name": "Ikhtisar Asuransi Jiwa",
-            "status_doc": "1"
-          }
-        ]
-      }
+      "data": [
+        {
+          "tagsname": "notags",
+          "list": [
+            {
+              "doc_id": "ecm-01",
+              "documents_name": "Perjanjian Pembiayaan",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-02",
+              "documents_name": "Ringkasan Informasi Produk & Layanan",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-03",
+              "documents_name": "Surat Kesepakatan Konsumen",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-04",
+              "documents_name": "Salinan BPKB",
+              "status_doc": "1"
+            }
+          ]
+        },
+        {
+          "tagsname": "Polis Asuransi",
+          "list": [
+            {
+              "doc_id": "ecm-05",
+              "documents_name": "Polis Asuransi Unit",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-06",
+              "documents_name": "Polis Asuransi PA",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-07",
+              "documents_name": "Polis Asuransi Jiwa",
+              "status_doc": "1"
+            }
+          ]
+        },
+        {
+          "tagsname": "Ikhtisar Asuransi",
+          "list": [
+            {
+              "doc_id": "ecm-08",
+              "documents_name": "Ikhtisar Asuransi Unit",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-09",
+              "documents_name": "Ikhtisar Asuransi PA",
+              "status_doc": "1"
+            },
+            {
+              "doc_id": "ecm-10",
+              "documents_name": "Ikhtisar Asuransi Jiwa",
+              "status_doc": "1"
+            }
+          ]
+        }
+      ]
     }
   })
 }
