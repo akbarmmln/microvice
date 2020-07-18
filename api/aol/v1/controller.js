@@ -142,3 +142,7 @@ exports.listDocEcm = async function(req, res){
     }
   })
 }
+
+exports.downloadDocEcm = async function(req, res){
+  return await utils.dataPDF();
+}
