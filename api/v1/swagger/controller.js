@@ -669,8 +669,7 @@ exports.tokenIG = async function(req, res){
   try{
     let instagram = new Instagram(configIG);
     let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token/`;
-    let a = await instagram.getAuthorizationUrl(redirectUri, { scope: ['basic'] })
-    return res.status(200).json(a);
+    res.redirect(instagram.getAuthorizationUrl(redirectUri, { scope: ['basic'] }));
   }catch(e){
     if (typeof e === 'string') {
       logger.error('error request data', e);
