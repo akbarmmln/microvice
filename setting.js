@@ -28,7 +28,7 @@ module.exports = {
     },
     secret: process.env.SECRET,
     instagram: {
-        clientId: '3436674202095215',
+        clientId: '343667420209525',
         clientSecret: 'a878dbc756eff27ecac82a05ac6db36d'
     }
 };

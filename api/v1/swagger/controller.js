@@ -668,7 +668,7 @@ const configIG = require('../../../setting').instagram;
 exports.tokenIG = async function(req, res){
   try{
     let instagram = new Instagram(configIG);
-    let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token`;
+    let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token/`;
     let a = await instagram.getAuthorizationUrl(redirectUri, { scope: ['basic'] })
     return res.status(200).json(a);
   }catch(e){
@@ -685,7 +685,7 @@ exports.tokenIG = async function(req, res){
 exports.callBackToken = async function(req, res){
   try{
     let instagram = new Instagram(configIG);
-    let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token`;
+    let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token/`;
     let code = req.query.code;
     let data = await instagram.authorizeUser(code, redirectUri);
     return res.status(200).json(rsMsg(data));
