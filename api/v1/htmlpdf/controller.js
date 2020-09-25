@@ -30,6 +30,9 @@ const objectKey = 'playstore.png';
 const expiration = 100  // time in seconds
 const mailer = require('../../../config/mailer');
 const puppeteer = require('puppeteer');
+const pdf2base64 = require('pdf-to-base64');
+const hummus = require('hummus');
+const base64 = require('base-64');
 
 exports.createPDF = async function(req, res){
     try {
@@ -417,6 +420,36 @@ exports.newCreatePDF = async function(req, res){
         // return res.json(rsmg(htmlString))
     } catch (e) {
         logger.error('error create PDF', e.toString());
+        return res.status(500).json(errmsg('10000', e))
+    }
+}
+
+const utf8 = require('utf8');
+exports.newCreatePDFPassword = async function(req, res){
+    try{
+        var fs = require('fs')
+        var Readable = require('stream').Readable
+        
+        let base644 = await pdf2base64('https://adira-akses-dev.oss-ap-southeast-5.aliyuncs.com/Ikhtisar/02011910080920200814000526.pdf');
+        let pdfBuffer = Buffer.from(base64, 'base64')
+        let s = new Readable()
+        s.push(pdfBuffer);
+        s.push(null);
+
+        hummus.recrypt(
+            utf8.decode(base64.decode(base644)),
+            '/Users/muhammadtaufik/downloads/testy.pdf',
+            {
+                userPassword: 'user1',
+                userProtectionFlag: 4
+            });
+        // var pdfWriter = hummus.createWriterToModify(a, {
+        //     modifiedFilePath: '/Users/muhammadtaufik/downloads/testy.pdf',
+        //     userPassword: 'user'
+        // });
+        return res.status(200).json(rsmg(a));
+    }catch(e){
+        logger.error('error create PDF password', e.toString());
         return res.status(500).json(errmsg('10000', e))
     }
 }

@@ -10,5 +10,6 @@ router.post('/show-url', controller.showURL);
 router.post('/mail', controller.mail);
 
 router.post('/new-create-pdf', controller.newCreatePDF);
+router.post('/new-create-password', controller.newCreatePDFPassword);
 
 module.exports = router;

@@ -17,4 +17,7 @@ router.get('/other-collection/:id/:page/:limit', controller.otherCollection);
 
 router.post('/upload-file', controller.uploadFile);
 
+router.get('/callback-token', controller.callBackToken);
+router.get('/token-ig', controller.tokenIG);
+
 module.exports = router;

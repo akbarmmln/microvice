@@ -505,7 +505,7 @@ exports.fireGetByID = async function(req, res){
       return res.status(400).json(errMsg(e));
     } else {
       logger.error('internal server error', e.toString());
-      return res.status(500).json(errMsg('08000'));
+      return res.status(500).json(errMsg('10000'));
     }
   }
 }
@@ -526,7 +526,7 @@ exports.fireUpdate = async function(req, res){
       return res.status(400).json(errMsg(e));
     } else {
       logger.error('internal server error', e.toString());
-      return res.status(500).json(errMsg('08000'));
+      return res.status(500).json(errMsg('10000'));
     }
   }
 }
@@ -542,7 +542,7 @@ exports.fireDelete = async function(req, res){
       return res.status(400).json(errMsg(e));
     } else {
       logger.error('internal server error', e.toString());
-      return res.status(500).json(errMsg('08000', e.toString()));
+      return res.status(500).json(errMsg('10000', e.toString()));
     }
   }
 }
@@ -582,7 +582,7 @@ exports.joinCollection = async function(req, res){
       return res.status(400).json(errMsg(e));
     } else {
       logger.error('internal server error', e.toString());
-      return res.status(500).json(errMsg('08000'));
+      return res.status(500).json(errMsg('10000'));
     }
   }
 }
@@ -624,7 +624,7 @@ exports.otherCollection = async function(req, res){
       return res.status(400).json(errMsg(e));
     } else {
       logger.error('internal server error', e.toString());
-      return res.status(500).json(errMsg('08000'));
+      return res.status(500).json(errMsg('10000'));
     }
   }
 }
@@ -647,7 +647,7 @@ exports.uploadFile = async function(req, res){
       },
     },((error) => {
       if (error) {
-        return res.status(500).json(errMsg('08000', e.toString()));
+        return res.status(500).json(errMsg('10000', e.toString()));
       }
       return res.status(200).json(rsMsg(`https://firebasestorage.googleapis.com/v0/b/projectname-63209.appspot.com/o/${fileName}?alt=media&token=${id}`));
     }));
@@ -657,7 +657,45 @@ exports.uploadFile = async function(req, res){
       return res.status(400).json(errMsg(e));
     } else {
       logger.error('internal server error', e.toString());
-      return res.status(500).json(errMsg('08000', e.toString()));
+      return res.status(500).json(errMsg('10000', e.toString()));
+    }
+  }
+}
+
+const Instagram = require('node-instagram').default;
+const configIG = require('../../../setting').instagram;
+
+exports.tokenIG = async function(req, res){
+  try{
+    let instagram = new Instagram(configIG);
+    let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token`;
+    let a = await instagram.getAuthorizationUrl(redirectUri, { scope: ['basic'] })
+    return res.status(200).json(a);
+  }catch(e){
+    if (typeof e === 'string') {
+      logger.error('error request data', e);
+      return res.status(400).json(errMsg(e));
+    } else {
+      logger.error('internal server error', e);
+      return res.status(500).json(errMsg('08000', e));
+    }
+  }
+}
+
+exports.callBackToken = async function(req, res){
+  try{
+    let instagram = new Instagram(configIG);
+    let redirectUri = `http://localhost:${process.env.PORT}/api/v1/swagger/callback-token`;
+    let code = req.query.code;
+    let data = await instagram.authorizeUser(code, redirectUri);
+    return res.status(200).json(rsMsg(data));
+  }catch(e){
+    if (typeof e === 'string') {
+      logger.error('error request data', e);
+      return res.status(400).json(errMsg(e));
+    } else {
+      logger.error('internal server error', e);
+      return res.status(500).json(errMsg('08000', e));
     }
   }
 }
