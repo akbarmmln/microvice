@@ -5,18 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "test": "jest test/* --testResultsProcessor=\"jest-sonar-reporter\" --coverage --coverageDirectory=coverage --forceExit --notify --detectOpenHandles"
+    "dev": "node server.js"
   },
   "engines": {
     "node": "11.15.0",
     "npm": "6.4.1"
-  },
-  "devDependencies": {
-    "jest": "^24.1.0",
-    "jest-sonar-reporter": "^2.0.0",
-    "nodemon": "^1.18.10",
-    "supertest": "^3.4.2"
   },
   "repository": {
     "type": "git",
