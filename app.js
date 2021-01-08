@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const schedule = require('node-schedule');
-const logger = require('./config/logger');
+// const logger = require('./config/logger');
 const utils = require('./utils/utils');
 
 app.use(bodyParser.urlencoded({ extended: true }));
