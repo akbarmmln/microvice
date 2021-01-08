@@ -7,7 +7,7 @@ const logger = require('../../../config/logger');
 
 exports.ping = async function(req, res){
     try{
-        return res.status(200).json(rsmg('ping'));
+        return res.json(rsmg('ping'));
     }catch(e){
         if (typeof e === 'string') {
             logger.error('error request data', e.toString());
