@@ -36,13 +36,13 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use('/', require('./routes'));
 
-app.use((req, res, next) => {
-  const err = new Error('Route Not Found');
-  res.status(err.status || 404);
-  res.json({
-    message: err.message,
-    error: true,
-  });
-});
+// app.use((req, res, next) => {
+//   const err = new Error('Route Not Found');
+//   res.status(err.status || 404);
+//   res.json({
+//     message: err.message,
+//     error: true,
+//   });
+// });
 
 module.exports = app;
