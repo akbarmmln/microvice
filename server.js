@@ -6,7 +6,7 @@ const logger = require('./config/logger');
 const rp = require('request-promise');
 // const shclr = require('./api/v1/sceduler/controller')
 // Constants
-let PORT = 80
+let PORT = process.env.PORT || 8099;
 
 const server = app.listen(PORT, () => logger.debug(`API Server started. Listening on port:${PORT}`));
 
