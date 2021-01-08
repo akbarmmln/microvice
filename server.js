@@ -8,6 +8,6 @@ const rp = require('request-promise');
 // Constants
 let PORT = process.env.PORT || 8099;
 
-const server = app.listen(PORT, () => logger.debug(`API Server started. Listening on port:${PORT}`));
+const server = app.listen(PORT);
 
 module.exports = server;
