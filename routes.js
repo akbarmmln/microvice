@@ -13,6 +13,7 @@ router.all('/api/*', (req, res, next) => {
 fs.readdirSync(location())
     .forEach(file => {
         const path = `/${location(file)}`;
+        console.log('location1', path);
         router.use(path, require(`.${path}`));
     });
 
