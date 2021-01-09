@@ -8,7 +8,7 @@ const errMsg = require('../../../error/resError');
 
 exports.ping = async function(req, res){
     try{
-        return res.status(400).json(rsmg('ping'));
+        return res.status(200).json(rsmg('ping'));
     }catch(e){
         if (typeof e === 'string') {
             console.log('error request data', e.toString());
