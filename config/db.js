@@ -1,7 +1,7 @@
 'use strict';
 const Sequelize = require('sequelize');
 const settings = require('../setting').mysql;
-const logger = require('./logger');
+// const logger = require('./logger');
 const Op = Sequelize.Op;
 const operatorsAliases = {
   $eq: Op.eq,
@@ -62,10 +62,10 @@ const sequelize = new Sequelize(settings.dbname, settings.username, settings.pas
 
 sequelize.authenticate()
   .then(() => {
-    logger.debug('Connection has been established successfully.');
+    console.log('Connection has been established successfully.')
   })
   .catch(err => {
-    logger.error('Unable to connect to the database:', err);
+    console.log('Unable to connect to the database:', err)
   });
 
 module.exports = {

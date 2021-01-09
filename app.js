@@ -35,9 +35,6 @@ const specs = swaggerJsdoc(options);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use('/', require('./routes'));
-app.get('/pong', function(req, res){
-  res.json('ping');
-});
 
 app.use((req, res, next) => {
   const err = new Error('Route Not Found');
@@ -47,6 +44,5 @@ app.use((req, res, next) => {
     error: true,
   });
 });
-
 
 module.exports = app;
