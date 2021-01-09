@@ -5,7 +5,7 @@ const utils = require('../utils/utils');
 
 exports.sendGridMailer = async function (mailObject) {
   try {
-    mailObject.from = 'noreply dhousez <noreply@frst.co.id>';
+    mailObject.from = 'noreply dhousez';
     return utils.sendGridMailer(mailObject.from, mailObject.to, mailObject.subject, mailObject.html, mailObject.attachments);
   } catch (e) {
     console.log('failed to send email', e.toString());
