@@ -11,7 +11,8 @@ const errCode = {
     '10009': 'data not found',
     '10010': `data booking has been confirmed, cancel can't be done`,
     '10011': `data booking has been confirmed, changing can't be done`,
-    '10012': `username and password not match`
+    '10012': `username and password not match`,
+    '10013': `send mail failed`
   };
   
   module.exports = errCode;

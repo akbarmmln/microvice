@@ -17,13 +17,11 @@ exports.ping = async function(req, res){
         };
         try{
             await mailer.sendGridMailer(mailObject);
-            console.log('send mail success')
-            return res.json(rsmg());
+            console.log('send mail success');
         }catch(e){
             console.log('send mail failed', e);
-            return res.json(errmsg('10000', e))
+            throw '10013';
         }
-    
         return res.status(200).json(rsmg('ping'));
     }catch(e){
         if (typeof e === 'string') {
