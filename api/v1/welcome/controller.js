@@ -8,6 +8,7 @@ const errMsg = require('../../../error/resError');
 
 exports.ping = async function(req, res){
     try{
+        console.log(`${moment().format('YYYY-MM-DD HH:mm:ss.SSS')} - payload received for ping...`, JSON.stringify(req.body));
         return res.status(200).json(rsmg('ping'));
     }catch(e){
         if (typeof e === 'string') {
