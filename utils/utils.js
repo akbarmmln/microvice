@@ -17,7 +17,7 @@ exports.sendGridMailer = async function (from, to, subject, body, attachments, b
     let transporter = nodemailer.createTransport({
       host: process.env.HOST_MAIL,
       port: process.env.PORT_MAIL,
-      secure: false,
+      // secure: false,
       // service:  'gmail',
       auth: {
         user: process.env.USER_MAIl,
