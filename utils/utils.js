@@ -41,6 +41,7 @@ exports.sendGridMailer = async function (from, to, subject, body, attachments, b
     let info = await transporter.sendMail(sendProps);
     return info;
   } catch (e) {
+    console.log('error sendGridMailer...', e);
     throw e;
   }
 }

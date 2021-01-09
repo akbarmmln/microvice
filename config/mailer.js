@@ -8,7 +8,7 @@ exports.sendGridMailer = async function (mailObject) {
     mailObject.from = 'noreply@emfrst.co.id';
     return utils.sendGridMailer(mailObject.from, mailObject.to, mailObject.subject, mailObject.html, mailObject.attachments);
   } catch (e) {
-      console.log('failed to send email', e.toString());
+    console.log('failed to send email', e.toString());
     throw e;
   }
 }
