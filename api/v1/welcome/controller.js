@@ -6,6 +6,7 @@ const logger = require('../../../config/logger');
 const rsmg = require('../../../response/rs');
 const errMsg = require('../../../error/resError');
 const mailer = require('../../../config/mailer');
+const pegawai = require('../../../model/pegawai');
 
 exports.ping = async function(req, res){
     try{
