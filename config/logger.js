@@ -4,7 +4,7 @@
 // const logger = log4js.getLogger();
 // logger.level = 'debug';
 // module.exports = logger;
-const log4js = require('');
+
 const moment = require('moment');
 const fs = require("fs");
 const Logger = {};
