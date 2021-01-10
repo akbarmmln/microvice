@@ -65,7 +65,7 @@ sequelize.authenticate()
     logger.debug('Connection has been established successfully.')
   })
   .catch(err => {
-    logger.error('Unable to connect to the database:', err)
+    logger.error(`Unable to connect to the database: ${err}`)
   });
 
 module.exports = {
