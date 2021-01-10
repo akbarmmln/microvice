@@ -9,7 +9,7 @@ exports.dateFormat = async function (date, type) {
     const newDate = await moment(date).format(type);
     return newDate;
   } catch (e) {
-    console.log('error formating date', e.toString());
+    logger.error(`error formating date, ${e.toString()}`);
     throw e;
   }
 }
@@ -64,7 +64,7 @@ exports.dateFormatIndo = async function (date) {
     let newDate = `${moment(dates).format('DD')}-${newmonth}-${moment(dates).format('YYYY')}`;
     return newDate;
   } catch (e) {
-    console.log('error formating date', e.toString());
+    logger.error(`error formating date, ${e.toString()}`);
     return '-';
   }
 }
@@ -74,7 +74,7 @@ exports.rupiahFormat = async function (rupiah, elit) {
     const newRupiah = 'Rp' + rupiah.toString().replace(/\B(?=(\d{3})+(?!\d))/g, `${elit}`)
     return newRupiah;
   } catch (e) {
-    console.log('error formating rupiah', e.toString());
+    logger.error(`error formating rupiah, ${e.toString()}`);
     throw e;
   }
 }
@@ -84,7 +84,7 @@ exports.isValidateDate = async function (date) {
     date = new Date(date);
     return date instanceof Date && !isNaN(date);
   } catch (e) {
-    console.log(e);
+    logger.error(e);
     return false;
   }
 }

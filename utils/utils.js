@@ -4,10 +4,10 @@ const nodemailer = require('nodemailer');
 
 exports.returnFunction = function (resObject, errorMessageLogger, errorObject) {
   if (typeof errorObject === 'string') {
-    console.log(errorMessageLogger, errorObject.toString());
+    logger.error(errorMessageLogger, errorObject.toString());
     return resObject.status(400).json(errMsg(errorObject));
   } else {
-    console.log(errorObject.toString());
+    logger.error(errorObject.toString());
     return resObject.status(500).json(errMsg('02000'));
   }
 };
@@ -41,7 +41,7 @@ exports.sendGridMailer = async function (from, to, subject, body, attachments, b
     let info = await transporter.sendMail(sendProps);
     return info;
   } catch (e) {
-    console.log('error sendGridMailer...', e);
+    logger.error(`error sendGridMailer..., ${e}`);
     throw e;
   }
 }

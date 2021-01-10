@@ -8,7 +8,12 @@
 const moment = require('moment');
 const fs = require("fs");
 const Logger = {};
-const loggerStream = fs.createWriteStream(`../log/projek01-${moment().format('YYYYMMDDHHmmssSSS')}.log`);
+let loggerStream;
+if(process.env.ENVIRONMENT === 'LOCAL'){
+  loggerStream = fs.createWriteStream(`data.log`);
+}else{
+  loggerStream = fs.createWriteStream(`../log/projek01-${moment().format('YYYYMMDDHHmmssSSS')}.log`);
+}
 // const loggerStream = fs.createWriteStream(`projek01-${moment().format('YYYYMMDDHHmmssSSS')}.log`);
 
 Logger.info = function(msg) {

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const location = (name = '') => name ? `api/v1/${name}` : 'api/v1';
+const logger = require('./config/logger');
 
 /* SET CORS HEADERS FOR API */
 router.all('/api/*', (req, res, next) => {
@@ -13,7 +14,7 @@ router.all('/api/*', (req, res, next) => {
 fs.readdirSync(location())
     .forEach(file => {
         const path = `/${location(file)}`;
-        console.log('location1', path);
+        logger.debug(`location1, ${path}`);
         router.use(path, require(`.${path}`));
     });
 
