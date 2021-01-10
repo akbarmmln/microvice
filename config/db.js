@@ -43,17 +43,14 @@ const operatorsAliases = {
 const sequelize = new Sequelize(settings.dbname, settings.username, settings.password, {
   operatorsAliases,
   host: settings.hostname,
-  port: settings.port,
-  dialect: 'postgres',
-  dialectOptions: {
-    ssl: true,
-    decimalNumbers: true
-  },
+  dialect: 'mysql',
   pool: {
-    max: 5,
+    max: 3000,
     min: 0,
     acquire: 30000,
-    idle: 10000
+    idle: 30000,
+    idleTimeoutMillis: 3000,
+    evict: 30000
   },
   timezone: '+07:00'
 });
