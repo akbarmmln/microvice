@@ -4,11 +4,12 @@
 // const logger = log4js.getLogger();
 // logger.level = 'debug';
 // module.exports = logger;
-
+const log4js = require('');
 const moment = require('moment');
 const fs = require("fs");
 const Logger = {};
-const loggerStream = fs.createWriteStream(`projek01-${moment().format('YYYYMMDDHHmmssSSS')}.log`);
+const loggerStream = fs.createWriteStream(`../../../logs/projek01-${moment().format('YYYYMMDDHHmmssSSS')}.log`);
+// const loggerStream = fs.createWriteStream(`projek01-${moment().format('YYYYMMDDHHmmssSSS')}.log`);
 
 Logger.info = function(msg) {
   var message = `[${moment().format('YYYY-MM-DD HH:mm:ss.SSS')}] [INFO]` + " : " + msg + "\n";
