@@ -2,7 +2,7 @@
 
 const moment = require('moment');
 const uuidv4 = require('uuid/v4');
-// const logger = require('../../../config/logger');
+const logger = require('../../../config/logger');
 const rsmg = require('../../../response/rs');
 const errMsg = require('../../../error/resError');
 const mailer = require('../../../config/mailer');
@@ -15,13 +15,16 @@ exports.ping = async function(req, res){
             subject: `testing`,
             html: 'PING',
         };
-        try{
-            await mailer.sendGridMailer(mailObject);
-            console.log('send mail success');
-        }catch(e){
-            console.log('send mail failed', e);
-            throw '10013';
-        }
+        logger.info('asas');
+        logger.debug(`payload received for ping... ${JSON.stringify(req.body)}`);
+        logger.error(`payload received for ping... ${JSON.stringify(req.body)}`);
+        // try{
+        //     await mailer.sendGridMailer(mailObject);
+        //     console.log('send mail success');
+        // }catch(e){
+        //     console.log('send mail failed', e);
+        //     throw '10013';
+        // }
         return res.status(200).json(rsmg('ping'));
     }catch(e){
         if (typeof e === 'string') {
