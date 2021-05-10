@@ -6,8 +6,10 @@ router.post('/acction/trackingOrder', controller.trackingOrderAction);
 router.post('/star/trackingOrder', controller.trackingOrderStar);
 router.post('/dop/trackingOrder', controller.trackingOrderDop);
 router.post('/contractList', controller.contractList);
+router.post('/contractList-account', controller.contractListAccount);
 
 router.post('/firepost', controller.firepost);
+router.post('/firepost-batch', controller.firepostBatch);
 router.get('/fire-all-data', controller.getAllData);
 router.get('/fire-get-byid/:id', controller.fireGetByID);
 router.post('/fire-update', controller.fireUpdate);
