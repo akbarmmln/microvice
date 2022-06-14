@@ -91,3 +91,22 @@ exports.submitDWallet = async function (req, res) {
         }
     })
 }
+
+exports.debitdwallet = async function (req, res) {
+    res.status(200).json({
+        "responseCode": "1000",
+        "responseMessage": "Process successful.",
+        "responseTime": "2021-09-14T17:44:08.195+0700",
+        "response": {
+            "debitInstruction": {
+                "accountNumber": "081123456789",
+                "amount": "100000",
+                "description": "",
+                "reference": "0b4d9cc3-8c96-46c1-b779-1cef474e86eb",
+                "remarks": "008#0987544#4#150000#0#0#0#2500#2500",
+                "requestId": "ADIRA2203011744081951234",
+                "micrositeUrl": "https://www.danamon.co.id/dwallet/microsite/mpin/{jwt}"
+            }
+        }
+    })
+}
