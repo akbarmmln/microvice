@@ -26,5 +26,6 @@ router.post('/api/aol/v1/inquiryListContractCont', controller.inquiryListContrac
 router.post('/api/i5/gapura/v1/inqueryEsspay', controller.inqueryEsspay);
 router.post('/api/i5/gapura/v1/paymentEsspay', controller.paymentEsspay);
 router.post('/api/aol/v1/inquiryListContractOid', controller.inquiryListContractOid);
+router.post('/api/aol/v1/inquiryOid', controller.inquiryOid);
 
 module.exports = router;

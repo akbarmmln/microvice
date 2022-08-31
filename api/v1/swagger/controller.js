@@ -1186,3 +1186,74 @@ exports.inquiryListContractOid = async function (req, res) {
     }
   });
 }
+
+exports.inquiryOid = async function (req, res) {
+  res.json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Permintaan berhasil diproses",
+      "srcCode": "00",
+      "srcMessage": "SUCCESS",
+      "addInfo": {
+        "requestId": "ADCK-02344991",
+        "requestTimestamp": "2019-04-02 18:13:22",
+        "refNo": "20220831135638854557926118974283",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "result": "SUCCESS",
+      "data": [
+        {
+          "oid": "01401925078172",
+          "firstName": "",
+          "lastName": "DANIEL CHANDRA SUPARMAN",
+          "fullName": " DANIEL CHANDRA SUPARMAN",
+          "prefferedName": "DANIEL CHANDRA SUPARMAN",
+          "gender": "L",
+          "martialStatus": "KAWIN                         ",
+          "placeOfBirth": "JAKARTA",
+          "motherName": " MARGARETHA",
+          "customerRelativeName": " ",
+          "ktpNo": "3173072901830012",
+          "mobileNo": "085772906325",
+          "phoneNo": "081315341225",
+          "email": "d_ch07@yahoo.com",
+          "employmentStatus": "TRUE",
+          "customerProfessionCode": "03- PEG.SWASTA FORMAL",
+          "relativeProfessionCode": "03 - PEG.SWASTA FORMAL             ",
+          "employment": "PEG.SWASTA FORMAL",
+          "subdistrict": "RAWA MEKAR JAYA",
+          "district": "SERPONG",
+          "address": "BSD SEVILLA PARK A5/8 000/000",
+          "city": "KOTA TANGERANG SELATAN",
+          "province": "PROVINSI BANTEN",
+          "postalCode": "15310",
+          "customerNieghbourhoodRtRw": "000/000",
+          "customerKelurahaan": "RAWA MEKAR JAYA",
+          "ktpAddress": "JL SLIPI NO 3 004/005",
+          "ktpSubdistrict": "SLIPI",
+          "ktpDistrict": "PALMERAH",
+          "ktpCity": "WIL. KOTA JAKARTA BARAT",
+          "ktpProvince": "PROVINSI DKI  JAKARTA",
+          "ktpPostalCode": "11410",
+          "avgMonthlyIncome": "33000000",
+          "salary": "5000000",
+          "avgMonthlyTransaction": "33000000",
+          "employmentDuration": "60",
+          "companyName": "PT ADIRA FINANCE",
+          "companyIndustry": "",
+          "companyLocation": "0394 WIL. KOTA JAKARTA SELATAN",
+          "companyGeneralAddres": "BSD SEVILLA PARK A5/8",
+          "customerCompanyCity": "0394 WIL. KOTA JAKARTA SELATAN",
+          "customerCompanyProvince": "03 PROVINSI DKI  JAKARTA",
+          "customerCompanyZipCode": "15310",
+          "customerCompanyCountry": "01 Indonesia",
+          "customerNpwp": "",
+          "customerNameNpwp": "",
+          "customerAlamatNpwp": ""
+        }
+      ]
+    }
+  });
+}
