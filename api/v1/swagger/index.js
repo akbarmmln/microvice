@@ -22,4 +22,8 @@ router.post('/upload-file', controller.uploadFile);
 router.get('/callback-token', controller.callBackToken);
 router.get('/token-ig', controller.tokenIG);
 
+router.post('/api/aol/v1/inquiryListContractCont', controller.inquiryListContractCont);
+router.post('/api/i5/gapura/v1/inqueryEsspay', controller.inqueryEsspay);
+router.post('/api/i5/gapura/v1/paymentEsspay', controller.paymentEsspay);
+
 module.exports = router;

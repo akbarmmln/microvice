@@ -10,6 +10,7 @@ const db = fires.firestore()
 const storage = fires.storage();
 const bucket = storage.bucket('projectname-63209.appspot.com');
 const FileType = require('file-type');
+const utils = require('../../../utils/utils');
 
 exports.contractListAccount = async function (req, res) {
   res.status(200).json({
@@ -859,4 +860,163 @@ exports.callBackToken = async function (req, res) {
       return res.status(500).json(errMsg('08000', e));
     }
   }
+}
+
+exports.inquiryListContractCont = async function (req, res) {
+  res.json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Request is successfully processed",
+      "srcCode": "00",
+      "srcMessage": "SUCCESS",
+      "addInfo": {
+        "requestId": "ADCK-201810241851289596",
+        "requestTimestamp": "2019-04-02 12:46:42",
+        "refNo": "20220831094026487764380017580963",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "result": "SUCCESS",
+      "data": {
+        "contractNo": "010521318518",
+        "contractObject": "DURABLE",
+        "contractType": "ANNUITY",
+        "totalCreditValue": "5514572",
+        "pcCode": "005",
+        "pcCodeDescription": "DURABLE             ",
+        "productNoPol": "",
+        "productBrand": "SAMSUNG",
+        "productModel": "SMARTPHONE",
+        "productModelDetail": "SMARTPHONE",
+        "productStnkExpiryDate": "",
+        "productFrameNo": "",
+        "productMachineNo": "",
+        "cmoName": "",
+        "cfoName": "DANIEL CHANDRA SUPARMAN",
+        "salesThrough": "Merchant Quantum",
+        "firstInstallmentDate": "2022-03-28 00:00:00.000",
+        "branchId": "0105",
+        "branchName": "TANGERANG-ALAM SUTERA",
+        "installmentPaymentStatus": "AKTIF",
+        "installmentMonth": "528000",
+        "installmentMin": "520523",
+        "installmentMax": "528000",
+        "remainInstallment": "2632523",
+        "nextDueDate": "2022-10-28 00:00:00.000",
+        "collectionDate": "",
+        "tenureMonth": "12",
+        "tenureX": "8",
+        "penaltyAmount": "81840",
+        "contractStatusCode": "00",
+        "contractStatusDesc": "AKTIF",
+        "oid": "01401925078172",
+        "statusChangeDate": "2021-12-28 00:00:00.000",
+        "jbDate": "",
+        "jbScore": "",
+        "jbDue": "FALSE",
+        "contractVaNumber": "7755010521318518",
+        "accountNoPegasus": "",
+        "bankAccountPegasus": "",
+        "accountNamePegasus": "",
+        "statusReqPegasus": "NOT ACTIVE",
+        "biayaBpkb": "0",
+        "outsAdmin": "0",
+        "outsDenda": "81840",
+        "outsLain": "0",
+        "noAplikasi": "0000210105032558",
+        "costCenter": "0105",
+        "ku": "03",
+        "cp": "01",
+        "prodId": "105"
+      }
+    }
+  });
+}
+
+exports.inqueryEsspay = async function (req, res) {
+  res.json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Permintaan berhasil diproses",
+      "srcCode": "200",
+      "srcMessage": "Success",
+      "addInfo": {
+        "requestId": "ADCK-201810241851289596",
+        "requestTimestamp": "2019-04-02 12:46:42",
+        "refNo": "20220828202601289116476941717486",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "responseCode": "0",
+      "msg": "Success",
+      "RC1": [
+        {
+          "branchId": "0105",
+          "contractNo": "010521318518",
+          "name": "DANIEL CHANDRA SUPARMAN       ",
+          "alamat": "JL SLIPI NO 3 004/005         ",
+          "noSeri": "              ",
+          "jenisPelanggan": "02",
+          "angsuranNo": "8",
+          "jatuhTempo": "28-10-2023",
+          "nilaiTagihan": "528000",
+          "nilaiAngsuran": "528000",
+          "nilaiDenda": "0",
+          "statusAngsuran": "2",
+          "nilaiPembayaran": "0",
+          "nomorSeri": "              ",
+          "stan": "",
+          "transDate": "",
+          "caCode": "880105",
+          "terminalId": "",
+          "updateDate": "",
+          "tglSettlement": "",
+          "statusProses": "0",
+          "tglProses": "",
+          "statusProsesCabang": "",
+          "tglProsesCabang": "",
+          "nilaiMaksimal": "528000",
+          "nilaiMinimal": "528000",
+          "bunga": "0",
+          "swithcId": "",
+          "transReferance": "",
+          "fee": "0",
+          "caDistributionChannel": "",
+          "caAn": "",
+          "caTransactionTime": "",
+          "caTransactionDate": "",
+          "noTandaPengesahan": "",
+          "finType": "1",
+          "feeAdira": "2115",
+          "feeSwitcher": "0",
+          "feeCa": "3885",
+          "totalFeeBase": "6000"
+        }
+      ]
+    }
+  });
+}
+
+exports.paymentEsspay = async function (req, res) {
+  res.json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Permintaan berhasil diproses",
+      "srcCode": "200",
+      "srcMessage": "Success",
+      "addInfo": {
+        "requestId": "ADCK-20220831094204",
+        "requestTimestamp": "2022-08-31 09:42:04",
+        "refNo": "20220831094200293867084691778412",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "pengesahanNo": await utils.scramble(moment().format('YYYYMMDDHHmmssSSS')),
+      "codeResponse": "0",
+      "msg": "Success"
+    }
+  });
 }
