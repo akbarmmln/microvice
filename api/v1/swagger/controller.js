@@ -963,7 +963,7 @@ exports.inqueryEsspay = async function (req, res) {
           "jatuhTempo": "28-10-2023",
           "nilaiTagihan": "528000",
           "nilaiAngsuran": "528000",
-          "nilaiDenda": "0",
+          "nilaiDenda": "25000",
           "statusAngsuran": "2",
           "nilaiPembayaran": "0",
           "nomorSeri": "              ",
