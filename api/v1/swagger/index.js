@@ -28,4 +28,6 @@ router.post('/api/i5/gapura/v1/paymentEsspay', controller.paymentEsspay);
 router.post('/api/aol/v1/inquiryListContractOid', controller.inquiryListContractOid);
 router.post('/api/aol/v1/inquiryOid', controller.inquiryOid);
 
+router.post('/valencia/v1/datapool/submit_v2', controller.MiSubmitData);
+
 module.exports = router;
