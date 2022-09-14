@@ -1325,3 +1325,47 @@ exports.MiSubmitData = async function (req, res) {
     return res.status(500).json(errMsg('10000', e));
   }
 }
+
+exports.MiGetPayment = async function (req, res) {
+  try {
+    logger.debug('payload received for MiGetPayment...', JSON.stringify(req.body))
+    let Body = req.body.REQUESTDATA
+    let NomorPolis = Body.Param1
+    let status;
+
+    let dataPolis = await AdrMiPolis.findOne({
+      raw: true,
+      where: {
+        nomor_polis: NomorPolis
+      }
+    })
+    if(!dataPolis){
+      throw '10001'
+    }
+
+    if(dataPolis.status_bayar == '1'){
+      status = 'PAID'
+    }else{
+      status = 'UNPAID'
+    }
+
+    res.json({
+      "ResponseCode": "200",
+      "ResponseDesc": "Datamaster has been loaded successfully",
+      "ResponseData": {
+        "Table": [
+          {
+            "POLICYNO": dataPolis.nomor_polis,
+            "PREMIUM": dataPolis.nominal,
+            "PAYMENT": dataPolis.nominal,
+            "OUTSTANDING": dataPolis.nominal,
+            "STATUS": status
+          }
+        ]
+      }
+    })
+  } catch (e) {
+    logger.error('error MiGetPayment...', e);
+    return res.status(500).json(errMsg('10000', e));
+  }
+}

@@ -29,5 +29,6 @@ router.post('/api/aol/v1/inquiryListContractOid', controller.inquiryListContract
 router.post('/api/aol/v1/inquiryOid', controller.inquiryOid);
 
 router.post('/valencia/v1/datapool/submit_v2', controller.MiSubmitData);
+router.post('/valencia/v1/datamaster/retrieve', controller.MiGetPayment);
 
 module.exports = router;
