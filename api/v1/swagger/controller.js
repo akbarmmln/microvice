@@ -1260,63 +1260,68 @@ exports.inquiryOid = async function (req, res) {
 }
 
 exports.MiSubmitData = async function (req, res) {
-  let NamaTertanggung = req.body.NamaTertanggung
-  let AlamatTertanggung = req.body.AlamatTertanggung
-  let TempatLahirTertanggung = req.body.TempatLahirTertanggung
-  let TanggalLahirTertanggung = req.body.TanggalLahirTertanggung
-  let EmailTertanggung = req.body.EmailTertanggung
-  let JenisKelaminTertanggung = req.body.JenisKelaminTertanggung
-  let NomorIdentitasTertanggung = req.body.NomorIdentitasTertanggung
-  let NomorHPTertanggung = req.body.NomorHPTertanggung
-  let PekerjaanTertanggung = req.body.PekerjaanTertanggung
-  let ProdukAsuransi = req.body.ProdukAsuransi
-  let NomorReferensi = req.body.NomorReferensi
-  let TanggalMulaiAsuransi = req.body.TanggalMulaiAsuransi
-  let MerekKendaraan = req.body.MerekKendaraan
-  let NomorPolisiKendaraan = req.body.NomorPolisiKendaraan
-  let NomorRangkaKendaraan = req.body.NomorRangkaKendaraan
-  let TahunPembuatanKendaraan = req.body.TahunPembuatanKendaraan
-  let NomorPolis = `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`
+  try {
+    logger.debug('payload received for MiSubmitData...', JSON.stringify(req.body))
+    let NamaTertanggung = req.body.NamaTertanggung
+    let AlamatTertanggung = req.body.AlamatTertanggung
+    let TempatLahirTertanggung = req.body.TempatLahirTertanggung
+    let TanggalLahirTertanggung = req.body.TanggalLahirTertanggung
+    let EmailTertanggung = req.body.EmailTertanggung
+    let JenisKelaminTertanggung = req.body.JenisKelaminTertanggung
+    let NomorIdentitasTertanggung = req.body.NomorIdentitasTertanggung
+    let NomorHPTertanggung = req.body.NomorHPTertanggung
+    let PekerjaanTertanggung = req.body.PekerjaanTertanggung
+    let ProdukAsuransi = req.body.ProdukAsuransi
+    let NomorReferensi = req.body.NomorReferensi
+    let TanggalMulaiAsuransi = req.body.TanggalMulaiAsuransi
+    let MerekKendaraan = req.body.MerekKendaraan
+    let NomorPolisiKendaraan = req.body.NomorPolisiKendaraan
+    let NomorRangkaKendaraan = req.body.NomorRangkaKendaraan
+    let TahunPembuatanKendaraan = req.body.TahunPembuatanKendaraan
+    let NomorPolis = `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`
 
-  await AdrMiPolis.create({
-    id: uuidv4(),
-    nomor_polis: NomorPolis,
-    nominal: 1,
-    status_bayar: 0
-  })
+    await AdrMiPolis.create({
+      id: uuidv4(),
+      nomor_polis: NomorPolis,
+      nominal: 1,
+      status_bayar: 0
+    })
 
-  res.json({
-    "ResponseCode": "200",
-    "ResponseDesc": `Data has been processed! Process ID : ${await utils.scramble(moment().format('mmssSSS'))}`,
-    "ResponseData": {
-      "Table": [
-        {
-          "NOMOR POLIS": NomorPolis,
-          "NAMA TERTANGGUNG": NamaTertanggung,
-          "ALAMAT TERTANGGUNG": AlamatTertanggung,
-          "TEMPAT LAHIR TERTANGGUNG": TempatLahirTertanggung,
-          "TANGGAL LAHIR TERTANGGUNG": moment(TanggalLahirTertanggung).format('YYYY-MM-DD HH:mm:ss'),
-          "EMAIL TERTANGGUNG": EmailTertanggung,
-          "JENIS KELAMIN TERTANGGUNG": JenisKelaminTertanggung,
-          "NOMOR IDENTITAS TERTANGGUNG": NomorIdentitasTertanggung,
-          "NOMOR HP TERTANGGUNG": NomorHPTertanggung,
-          "PEKERJAAN TERTANGGUNG": PekerjaanTertanggung,
-          "PRODUK ASURANSI": ProdukAsuransi,
-          "NOMOR REFERENSI": NomorReferensi,
-          "TANGGAL MULAI ASURANSI": moment(TanggalMulaiAsuransi).format('YYYY-MM-DD HH:mm:ss'),
-          "TANGGAL SELESAI ASURANSI": moment('2030-01-01').format('YYYY-MM-DD HH:mm:ss'),
-          "MEREK KENDARAAN": MerekKendaraan,
-          "NOMOR POLISI KENDARAAN": NomorPolisiKendaraan,
-          "NOMOR RANGKA KENDARAAN": NomorRangkaKendaraan,
-          "TAHUN PEMBUATAN KENDARAAN": TahunPembuatanKendaraan,
-          "PREMI ASURANSI": 1,
-          "BS ID 1": `${await utils.scramble(moment().format('DDHHmmssSSS'))}`,
-          "BS FEE 1": 0,
-          "URL TOKOPEDIA": "www.google.com",
-          "VA BCA": `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`,
-        }
-      ]
-    }
+    res.json({
+      "ResponseCode": "200",
+      "ResponseDesc": `Data has been processed! Process ID : ${await utils.scramble(moment().format('mmssSSS'))}`,
+      "ResponseData": {
+        "Table": [
+          {
+            "NOMOR POLIS": NomorPolis,
+            "NAMA TERTANGGUNG": NamaTertanggung,
+            "ALAMAT TERTANGGUNG": AlamatTertanggung,
+            "TEMPAT LAHIR TERTANGGUNG": TempatLahirTertanggung,
+            "TANGGAL LAHIR TERTANGGUNG": moment(TanggalLahirTertanggung).format('YYYY-MM-DD HH:mm:ss'),
+            "EMAIL TERTANGGUNG": EmailTertanggung,
+            "JENIS KELAMIN TERTANGGUNG": JenisKelaminTertanggung,
+            "NOMOR IDENTITAS TERTANGGUNG": NomorIdentitasTertanggung,
+            "NOMOR HP TERTANGGUNG": NomorHPTertanggung,
+            "PEKERJAAN TERTANGGUNG": PekerjaanTertanggung,
+            "PRODUK ASURANSI": ProdukAsuransi,
+            "NOMOR REFERENSI": NomorReferensi,
+            "TANGGAL MULAI ASURANSI": moment(TanggalMulaiAsuransi).format('YYYY-MM-DD HH:mm:ss'),
+            "TANGGAL SELESAI ASURANSI": moment('2030-01-01').format('YYYY-MM-DD HH:mm:ss'),
+            "MEREK KENDARAAN": MerekKendaraan,
+            "NOMOR POLISI KENDARAAN": NomorPolisiKendaraan,
+            "NOMOR RANGKA KENDARAAN": NomorRangkaKendaraan,
+            "TAHUN PEMBUATAN KENDARAAN": TahunPembuatanKendaraan,
+            "PREMI ASURANSI": 1,
+            "BS ID 1": `${await utils.scramble(moment().format('DDHHmmssSSS'))}`,
+            "BS FEE 1": 0,
+            "URL TOKOPEDIA": "www.google.com",
+            "VA BCA": `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`,
+          }
+        ]
+      }
+    })
+  } catch (e) {
+    logger.error('error MiSubmitData...', e);
+    return res.status(500).json(errMsg('10000', e));
   }
-  )
 }
