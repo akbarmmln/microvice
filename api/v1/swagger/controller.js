@@ -11,6 +11,7 @@ const storage = fires.storage();
 const bucket = storage.bucket('projectname-63209.appspot.com');
 const FileType = require('file-type');
 const utils = require('../../../utils/utils');
+const AdrMiPolis = require('../../../modeldb/adr_mincroinsurance_polis');
 
 exports.contractListAccount = async function (req, res) {
   res.status(200).json({
@@ -1259,7 +1260,6 @@ exports.inquiryOid = async function (req, res) {
 }
 
 exports.MiSubmitData = async function (req, res) {
-
   let NamaTertanggung = req.body.NamaTertanggung
   let AlamatTertanggung = req.body.AlamatTertanggung
   let TempatLahirTertanggung = req.body.TempatLahirTertanggung
@@ -1276,6 +1276,14 @@ exports.MiSubmitData = async function (req, res) {
   let NomorPolisiKendaraan = req.body.NomorPolisiKendaraan
   let NomorRangkaKendaraan = req.body.NomorRangkaKendaraan
   let TahunPembuatanKendaraan = req.body.TahunPembuatanKendaraan
+  let NomorPolis = `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`
+
+  await AdrMiPolis.create({
+    id: uuidv4(),
+    nomor_polis: NomorPolis,
+    nominal: 1,
+    status_bayar: 0
+  })
 
   res.json({
     "ResponseCode": "200",
@@ -1283,7 +1291,7 @@ exports.MiSubmitData = async function (req, res) {
     "ResponseData": {
       "Table": [
         {
-          "NOMOR POLIS": `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`,
+          "NOMOR POLIS": NomorPolis,
           "NAMA TERTANGGUNG": NamaTertanggung,
           "ALAMAT TERTANGGUNG": AlamatTertanggung,
           "TEMPAT LAHIR TERTANGGUNG": TempatLahirTertanggung,
