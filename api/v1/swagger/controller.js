@@ -1369,3 +1369,19 @@ exports.MiGetPayment = async function (req, res) {
     return res.status(500).json(errMsg('10000', e));
   }
 }
+
+exports.MIAuthToken = async function (req, res) {
+  return res.status(200).json({
+    ResponseCode: "200",
+    ResponseDesc: "Generate token successfully",
+    ResponseData: {
+      Table1: [
+        {
+          AuthToken: "APoiTOUU3P5y19RCoKNot0pXkSS4BDoq",
+          ExpireOn: "2021-09-28T09:20:15.9256372"
+        }
+      ]
+    }
+  }
+  )
+}
