@@ -12,6 +12,7 @@ const bucket = storage.bucket('projectname-63209.appspot.com');
 const FileType = require('file-type');
 const utils = require('../../../utils/utils');
 const AdrMiPolis = require('../../../modeldb/adr_mincroinsurance_polis');
+const storageRef = fires.storage().bucket('gs://projectname-63209.appspot.com')
 
 exports.contractListAccount = async function (req, res) {
   res.status(200).json({
@@ -802,19 +803,27 @@ exports.uploadFile = async function (req, res) {
     let filetypes = await FileType.fromBuffer(imageBuffer);
     let mimeType = filetypes.mime;
     let ext = filetypes.ext;
-    let fileName = `thumbnail64.${ext}`;
-    let file = bucket.file(fileName);
-    file.save(imageBuffer, {
+    let fileName = `fileinituh.${ext}`;
+    let file = bucket.file(`coba-coba/${fileName}`)
+    await file.save(imageBuffer,{
+      public: true,
       metadata: {
         contentType: mimeType,
         metadata: { firebaseStorageDownloadTokens: id }
-      },
-    }, ((error) => {
-      if (error) {
-        return res.status(500).json(errMsg('10000', e.toString()));
       }
-      return res.status(200).json(rsMsg(`https://firebasestorage.googleapis.com/v0/b/projectname-63209.appspot.com/o/${fileName}?alt=media&token=${id}`));
-    }));
+    })
+    return res.status(200).json(rsMsg())
+    // file.save(imageBuffer, {
+    //   metadata: {
+    //     contentType: mimeType,
+    //     metadata: { firebaseStorageDownloadTokens: id }
+    //   },
+    // }, ((error) => {
+    //   if (error) {
+    //     return res.status(500).json(errMsg('10000', e.toString()));
+    //   }
+    //   return res.status(200).json(rsMsg(`https://firebasestorage.googleapis.com/v0/b/projectname-63209.appspot.com/o/${fileName}?alt=media&token=${id}`));
+    // }));
   } catch (e) {
     if (typeof e === 'string') {
       logger.error('error request data', e.toString());
@@ -955,16 +964,16 @@ exports.inqueryEsspay = async function (req, res) {
       "RC1": [
         {
           "branchId": "0105",
-          "contractNo": "010521318518",
+          "contractNo": "020121401334",
           "name": "DANIEL CHANDRA SUPARMAN       ",
           "alamat": "JL SLIPI NO 3 004/005         ",
           "noSeri": "              ",
           "jenisPelanggan": "02",
           "angsuranNo": "8",
           "jatuhTempo": "28-10-2023",
-          "nilaiTagihan": "553000",
-          "nilaiAngsuran": "528000",
-          "nilaiDenda": "25000",
+          "nilaiTagihan": "1100000",
+          "nilaiAngsuran": "1100000",
+          "nilaiDenda": "0",
           "statusAngsuran": "2",
           "nilaiPembayaran": "0",
           "nomorSeri": "              ",
@@ -978,8 +987,8 @@ exports.inqueryEsspay = async function (req, res) {
           "tglProses": "",
           "statusProsesCabang": "",
           "tglProsesCabang": "",
-          "nilaiMaksimal": "553000",
-          "nilaiMinimal": "553000",
+          "nilaiMaksimal": "1100000",
+          "nilaiMinimal": "1100000",
           "bunga": "0",
           "swithcId": "",
           "transReferance": "",
@@ -2902,4 +2911,28 @@ exports.inquiryPaymentHistory = async function (req, res) {
       ]
     }
   })
+}
+
+exports.newUploadWays = async function(req, res){
+  try{
+    let filename = 'file.csv'
+    let dir = './stash/uploaddoc';
+    const storage = await storageRef.upload(`${dir}/${filename}`,{
+      public: true,
+      destination: `/uploads/hashnode/${filename}`,
+      metadata: {
+        firebaseStorageDownloadTokens: uuidv4(),
+      }
+    })
+    // return storage[0].metadata.mediaLink;
+    return res.status(200).json(rsMsg(storage))
+  }catch(e){
+    if (typeof e === 'string') {
+      logger.error('error newUploadWays', e);
+      return res.status(400).json(errMsg(e));
+    } else {
+      logger.error('internal server error - newUploadWays', e);
+      return res.status(500).json(errMsg('08000', e));
+    }
+  }
 }
