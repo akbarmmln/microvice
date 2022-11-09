@@ -1371,8 +1371,7 @@ exports.MiSubmitData = async function (req, res) {
             "PREMI ASURANSI": 1,
             "BS ID 1": `${await utils.scramble(moment().format('DDHHmmssSSS'))}`,
             "BS FEE 1": 0,
-            "URL TOKOPEDIA": "www.google.com",
-            "VA BCA": `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`,
+            "VA NUMBER": `${await utils.scramble(moment().format('YYYYMMDDHHmmssSSS'))}`,
           }
         ]
       }
