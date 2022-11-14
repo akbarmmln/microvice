@@ -2935,3 +2935,83 @@ exports.newUploadWays = async function(req, res){
     }
   }
 }
+
+exports.inquiryByNoContract = async function (req, res) {
+  return res.status(200).json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Permintaan berhasil diproses",
+      "srcCode": "200",
+      "srcMessage": "SUCCESS",
+      "addInfo": {
+        "requestId": "ADCK-201810241851289596",
+        "requestTimestamp": "2019-04-02 12:46:42",
+        "refNo": "20221114163541428943854265639815",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "rc1": [
+        {
+          "branchId": "0201",
+          "area": "BANDUNG AREA",
+          "branchName": "BANDUNG-SOEKARNO HATTA",
+          "noContract": "020120100301",
+          "custName": "ISVANDIARI FITRI UTAMI",
+          "tenor": "12",
+          "otrOld": "15000000",
+          "nopol": "D2847MV",
+          "merk": "YAMAHA",
+          "type": "SCOOTERMATIC",
+          "models": "MIO J-CW FI",
+          "thnKendaraan": "2020",
+          "noRangka": "GFASDFASDF",
+          "noMesin": "DFAERWER",
+          "ppdDate": "2020-06-29 00:00:00.0",
+          "tglJtTempo": "2020-08-29 00:00:00.0",
+          "otrNew": "11250000",
+          "grossRate": "2.4",
+          "rateUnit": "2.16",
+          "premiUnit": "270000",
+          "komisiUnit": "72900",
+          "ppnUnit": "7290",
+          "pphUnit": "1458",
+          "premiUnitNett": "261252",
+          "ratePa": "0.24",
+          "premiPa": "27000",
+          "komisiPa": "13500",
+          "ppnPa": "1350",
+          "pphPa": "270",
+          "premiPaNett": "25380",
+          "totalKomisi": "86400",
+          "jmlhPremi": "270000",
+          "jmlhPremiNett": "286632",
+          "tglBayarPremi": "",
+          "tglAwalRnw": "2022-06-29 00:00:00.0",
+          "tglAkhirRnw": "2023-06-29 00:00:00.0",
+          "custAddr": "JL  BKT KELAPA GADING RT/RW 07/11 METESEH TEMBALAN, G",
+          "finType": "1",
+          "pcCode": "1",
+          "insrFinId": "2",
+          "insrFinIdNm": "ZURICH",
+          "insrFlag": "0",
+          "logId": "[ED6BD80D-2D70-04D4-E054-00144FF8C0DA]",
+          "kondPertanggungan": "1-TOTAL LOSS ONLY (TLO)",
+          "tujuanPenggunaan": "PRIBADI",
+          "noKtp": "3374155303940002",
+          "birth": "1994-03-13 00:00:00.0",
+          "gender": "PREMPUAN",
+          "objtCode": "001",
+          "objtGroup": "001",
+          "kodeBayar": "",
+          "admf": "",
+          "adminCa": "",
+          "adminSwitcher": "",
+          "adminTotal": "",
+          "caId": "",
+          "caCode": ""
+        }
+      ]
+    }
+  })
+}
