@@ -35,5 +35,6 @@ router.post('/valencia/v1/datamaster/retrieve', controller.MiGetPayment);
 router.post('/api/aol/v1/inquiryPaymentHistory', controller.inquiryPaymentHistory);
 
 router.post('/api/aol/v1/inquiryByNoContract', controller.inquiryByNoContract);
+router.post('/api/aol/v1/submitInquiryRenewalInsurance', controller.submitInquiryRenewalInsurance);
 
 module.exports = router;

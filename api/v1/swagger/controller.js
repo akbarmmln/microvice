@@ -3015,3 +3015,23 @@ exports.inquiryByNoContract = async function (req, res) {
     }
   })
 }
+
+exports.submitInquiryRenewalInsurance = async function (req, res) {
+  return res.status(200).json({
+    "header": {
+      "code": "ESB-00-000",
+      "message": "Permintaan berhasil diproses",
+      "srcCode": "0",
+      "srcMessage": "Success",
+      "addInfo": {
+        "requestId": "ADCK-20221108155654",
+        "requestTimestamp": "2022-11-08 15:56:54",
+        "refNo": "20221108155649894685912595004464",
+        "srcTarget": "0"
+      }
+    },
+    "data": {
+      "pengesahan": "0685187200"
+    }
+  })
+}
