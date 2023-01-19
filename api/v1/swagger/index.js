@@ -29,8 +29,8 @@ router.post('/api/aol/v1/inquiryListContractOid', controller.inquiryListContract
 router.post('/api/aol/v1/inquiryOid', controller.inquiryOid);
 
 router.post('/valencia/v1/authenticate/authtoken', controller.MIAuthToken);
-router.post('/valencia/v1/datapool/submit_v2', controller.MiSubmitData);
-router.post('/valencia/v1/datamaster/retrieve', controller.MiGetPayment);
+// router.post('/valencia/v1/datapool/submit_v2', controller.MiSubmitData);
+// router.post('/valencia/v1/datamaster/retrieve', controller.MiGetPayment);
 
 router.post('/api/aol/v1/inquiryPaymentHistory', controller.inquiryPaymentHistory);
 
